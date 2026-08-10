@@ -1,0 +1,10 @@
+{
+  "id": "google-ai-optimization-guide",
+  "title": "Google AI Optimization Guide for Search",
+  "publisher": "Google",
+  "url": "https://developers.google.com/search/docs/fundamentals/ai-optimization-guide",
+  "sourceType": "official-docs",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["ai-search", "search"]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "seo-foundations",
+  "categoryId": "search",
+  "title": "SEO 기초",
+  "description": "검색 엔진 노출의 기본 원리와 온페이지·기술적 SEO 기초를 다루는 클러스터.",
+  "order": 0,
+  "hubPath": "/search/clusters/seo-foundations/",
+  "primaryEntityId": "seo",
+  "leafSlugs": ["search/seo-basic"],
+  "status": "active"
+}

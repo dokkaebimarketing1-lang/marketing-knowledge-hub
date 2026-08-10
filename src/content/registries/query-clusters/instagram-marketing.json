@@ -1,0 +1,11 @@
+{
+  "id": "instagram-marketing",
+  "categoryId": "sns",
+  "title": "인스타그램 마케팅",
+  "description": "인스타그램 피드·릴스·스토리를 활용한 브랜드 운영과 캠페인 전략을 다루는 클러스터.",
+  "order": 0,
+  "hubPath": "/sns/clusters/instagram-marketing/",
+  "primaryEntityId": "instagram",
+  "leafSlugs": ["sns/instagram"],
+  "status": "active"
+}

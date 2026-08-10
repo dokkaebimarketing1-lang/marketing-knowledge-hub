@@ -1,0 +1,8 @@
+{
+  "id": "lifecycle-messaging",
+  "name": "Lifecycle Messaging",
+  "type": "practice",
+  "description": "고객 여정 단계별(신규·활성·이탈) 맞춤 메시지와 이메일 마케팅으로 전환·유지를 이끄는 방식.",
+  "sameAs": [],
+  "status": "active"
+}

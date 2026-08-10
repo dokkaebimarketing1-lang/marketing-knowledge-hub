@@ -1,0 +1,10 @@
+{
+  "id": "ai-search",
+  "label": "AI 검색 (GEO·AEO)",
+  "kind": "knowledge",
+  "description": "생성형 AI 검색(ChatGPT·Perplexity·AI Overviews) 환경에서 브랜드가 인용·추천되도록 하는 GEO·AEO 전략을 다루는 카테고리.",
+  "order": 0,
+  "hue": 166,
+  "hubPath": "/ai-search/",
+  "status": "active"
+}

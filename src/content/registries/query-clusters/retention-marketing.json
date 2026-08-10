@@ -1,0 +1,11 @@
+{
+  "id": "retention-marketing",
+  "categoryId": "performance",
+  "title": "리텐션 마케팅",
+  "description": "기존 고객의 재구매 유도와 이탈 방지로 수익을 극대화하는 리텐션 전략을 다루는 클러스터.",
+  "order": 1,
+  "hubPath": "/performance/clusters/retention-marketing/",
+  "primaryEntityId": "retention-marketing",
+  "leafSlugs": ["performance/retention"],
+  "status": "active"
+}

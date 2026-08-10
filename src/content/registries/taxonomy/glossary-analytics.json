@@ -1,0 +1,10 @@
+{
+  "id": "glossary-analytics",
+  "label": "데이터 분석",
+  "kind": "glossary",
+  "description": "데이터 분석·측정 지표와 GA4·퍼널·코호트 관련 용어를 모은 카테고리.",
+  "order": 3,
+  "hue": 150,
+  "hubPath": "/glossary/#glossary-analytics",
+  "status": "active"
+}

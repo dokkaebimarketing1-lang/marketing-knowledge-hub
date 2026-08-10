@@ -1,0 +1,11 @@
+{
+  "id": "youtube-marketing",
+  "categoryId": "sns",
+  "title": "유튜브 마케팅",
+  "description": "유튜브 검색·추천 알고리즘 노출과 영상 콘텐츠 전략을 다루는 클러스터.",
+  "order": 1,
+  "hubPath": "/sns/clusters/youtube-marketing/",
+  "primaryEntityId": "youtube",
+  "leafSlugs": ["sns/youtube"],
+  "status": "active"
+}

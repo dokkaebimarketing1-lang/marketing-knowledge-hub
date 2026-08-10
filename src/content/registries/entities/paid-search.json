@@ -1,0 +1,8 @@
+{
+  "id": "paid-search",
+  "name": "Paid Search",
+  "type": "channel",
+  "description": "키워드 광고(PPC)로 구매 의도가 높은 검색 사용자에게 노출하는 유료 광고 채널.",
+  "sameAs": [],
+  "status": "active"
+}

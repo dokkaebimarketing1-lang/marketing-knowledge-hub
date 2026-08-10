@@ -1,0 +1,10 @@
+{
+  "id": "google-ads-quality-score",
+  "title": "Google Ads Quality Score help",
+  "publisher": "Google",
+  "url": "https://support.google.com/google-ads/answer/6167118?hl=ko",
+  "sourceType": "official-docs",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["performance", "search"]
+}

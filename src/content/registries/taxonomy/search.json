@@ -1,0 +1,10 @@
+{
+  "id": "search",
+  "label": "검색 마케팅",
+  "kind": "knowledge",
+  "description": "SEO·키워드 광고·블로그·카페 등 검색 생태계를 공략하는 검색 마케팅 지식 카테고리.",
+  "order": 1,
+  "hue": 222,
+  "hubPath": "/search/",
+  "status": "active"
+}

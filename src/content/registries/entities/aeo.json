@@ -1,0 +1,8 @@
+{
+  "id": "aeo",
+  "name": "AEO (Answer Engine Optimization)",
+  "type": "discipline",
+  "description": "음성 검색·피처드 스니펫·AI 개요에서 콘텐츠가 직접 답변으로 채택되도록 최적화하는 기법.",
+  "sameAs": [],
+  "status": "active"
+}

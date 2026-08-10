@@ -1,0 +1,10 @@
+{
+  "id": "performance",
+  "label": "퍼포먼스 마케팅",
+  "kind": "knowledge",
+  "description": "CPA·CPS·리텐션·광고 최적화 등 성과 중심 마케팅 운영 지식 카테고리.",
+  "order": 3,
+  "hue": 20,
+  "hubPath": "/performance/",
+  "status": "active"
+}

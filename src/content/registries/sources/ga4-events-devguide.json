@@ -1,0 +1,10 @@
+{
+  "id": "ga4-events-devguide",
+  "title": "GA4 events developer guide",
+  "publisher": "Google",
+  "url": "https://developers.google.com/analytics/devguides/collection/ga4/events",
+  "sourceType": "official-docs",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["analytics"]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "kakao-moment-guide",
+  "title": "Kakao Moment ad guide",
+  "publisher": "Kakao Business",
+  "url": "https://kakaobusiness.gitbook.io/main/ad/moment",
+  "sourceType": "official-docs",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["sns", "performance", "content"]
+}

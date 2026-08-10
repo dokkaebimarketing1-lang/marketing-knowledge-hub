@@ -1,0 +1,10 @@
+{
+  "id": "hubspot-social-media-marketing-report",
+  "title": "HubSpot Social Media Marketing Report",
+  "publisher": "HubSpot",
+  "url": "https://blog.hubspot.com/marketing/hubspot-blog-social-media-marketing-report",
+  "sourceType": "vendor-report",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["sns", "content"]
+}

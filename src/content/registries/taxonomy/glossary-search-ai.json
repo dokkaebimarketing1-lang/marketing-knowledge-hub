@@ -1,0 +1,10 @@
+{
+  "id": "glossary-search-ai",
+  "label": "검색·AI 최적화",
+  "kind": "glossary",
+  "description": "SEO·GEO·AEO 등 검색 엔진과 생성형 AI 최적화 관련 용어를 모은 카테고리.",
+  "order": 0,
+  "hue": 166,
+  "hubPath": "/glossary/#glossary-search-ai",
+  "status": "active"
+}

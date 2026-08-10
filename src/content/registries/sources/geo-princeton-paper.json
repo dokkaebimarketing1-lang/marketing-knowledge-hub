@@ -1,0 +1,10 @@
+{
+  "id": "geo-princeton-paper",
+  "title": "GEO: Generative Engine Optimization",
+  "publisher": "Princeton University",
+  "url": "https://arxiv.org/abs/2311.09735",
+  "sourceType": "academic",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["ai-search"]
+}

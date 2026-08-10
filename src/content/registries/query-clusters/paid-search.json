@@ -1,0 +1,11 @@
+{
+  "id": "paid-search",
+  "categoryId": "search",
+  "title": "검색 광고 (Paid Search)",
+  "description": "키워드 광고 입찰·소재·전환 최적화 등 유료 검색 광고 운영을 다루는 클러스터.",
+  "order": 1,
+  "hubPath": "/search/clusters/paid-search/",
+  "primaryEntityId": "paid-search",
+  "leafSlugs": ["search/keyword-ads"],
+  "status": "active"
+}

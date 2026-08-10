@@ -1,0 +1,11 @@
+{
+  "id": "ga4-foundations",
+  "categoryId": "analytics",
+  "title": "GA4 기초",
+  "description": "GA4 설정·이벤트·핵심 보고서를 이해하고 활용하는 기초를 다루는 클러스터.",
+  "order": 0,
+  "hubPath": "/analytics/clusters/ga4-foundations/",
+  "primaryEntityId": "ga4",
+  "leafSlugs": ["analytics/ga4-basic"],
+  "status": "active"
+}

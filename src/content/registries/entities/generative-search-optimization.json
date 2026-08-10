@@ -1,0 +1,8 @@
+{
+  "id": "generative-search-optimization",
+  "name": "Generative Search Optimization",
+  "type": "discipline",
+  "description": "생성형 AI 검색(ChatGPT·Perplexity·AI Overviews)에서 브랜드가 인용·추천되도록 콘텐츠를 최적화하는 분야로, GEO와 AEO를 아우른다.",
+  "sameAs": [],
+  "status": "active"
+}

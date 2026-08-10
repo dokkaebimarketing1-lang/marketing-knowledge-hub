@@ -1,0 +1,8 @@
+{
+  "id": "roas",
+  "name": "ROAS (Return On Ad Spend)",
+  "type": "metric",
+  "description": "광고 지출 대비 광고 매출을 나타내는 성과 지표(광고 매출 ÷ 광고비).",
+  "sameAs": [],
+  "status": "active"
+}

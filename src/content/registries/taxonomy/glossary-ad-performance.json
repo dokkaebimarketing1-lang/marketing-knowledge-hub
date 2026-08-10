@@ -1,0 +1,10 @@
+{
+  "id": "glossary-ad-performance",
+  "label": "광고·퍼포먼스",
+  "kind": "glossary",
+  "description": "광고 집행·성과 지표(ROAS·CPA·CPC 등)와 미디어 구매 관련 용어를 모은 카테고리.",
+  "order": 2,
+  "hue": 20,
+  "hubPath": "/glossary/#glossary-ad-performance",
+  "status": "active"
+}

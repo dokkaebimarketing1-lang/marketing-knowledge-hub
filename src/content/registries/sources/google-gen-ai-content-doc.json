@@ -1,0 +1,10 @@
+{
+  "id": "google-gen-ai-content-doc",
+  "title": "Using generative AI content in Google Search",
+  "publisher": "Google",
+  "url": "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content",
+  "sourceType": "official-docs",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["ai-search", "content"]
+}

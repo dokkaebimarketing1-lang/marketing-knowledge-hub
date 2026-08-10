@@ -1,0 +1,11 @@
+{
+  "id": "ai-search-optimization",
+  "categoryId": "ai-search",
+  "title": "AI 검색 최적화 (GEO·AEO)",
+  "description": "생성형 AI 검색(ChatGPT·Perplexity·AI Overviews)에서 브랜드가 인용·추천되는 GEO와, AI 개요·음성 검색에서 직접 답변으로 채택되는 AEO를 아우르는 클러스터.",
+  "order": 0,
+  "hubPath": "/ai-search/clusters/ai-search-optimization/",
+  "primaryEntityId": "generative-search-optimization",
+  "leafSlugs": ["ai-search/geo-basic", "ai-search/aeo-basic"],
+  "status": "active"
+}

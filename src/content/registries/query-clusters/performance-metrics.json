@@ -1,0 +1,11 @@
+{
+  "id": "performance-metrics",
+  "categoryId": "performance",
+  "title": "성과 지표",
+  "description": "ROAS·CPA·CAC 등 광고 성과 지표의 산정과 해석을 다루는 클러스터.",
+  "order": 0,
+  "hubPath": "/performance/clusters/performance-metrics/",
+  "primaryEntityId": "roas",
+  "leafSlugs": ["performance/roas-metrics"],
+  "status": "active"
+}

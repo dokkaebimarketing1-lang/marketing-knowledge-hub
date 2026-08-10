@@ -1,0 +1,10 @@
+{
+  "id": "google-ai-features-doc",
+  "title": "AI features in Google Search documentation",
+  "publisher": "Google",
+  "url": "https://developers.google.com/search/docs/appearance/ai-features",
+  "sourceType": "official-docs",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["ai-search", "search"]
+}

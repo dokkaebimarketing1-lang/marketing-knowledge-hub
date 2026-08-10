@@ -1,0 +1,10 @@
+{
+  "id": "youtube-partner-program-policy",
+  "title": "YouTube Partner Program policies",
+  "publisher": "YouTube",
+  "url": "https://support.google.com/youtube/answer/72851",
+  "sourceType": "official-docs",
+  "accessedAt": "2026-08-08",
+  "status": "active",
+  "supports": ["sns", "content"]
+}

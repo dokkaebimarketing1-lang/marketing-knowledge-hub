@@ -1,0 +1,11 @@
+{
+  "id": "lifecycle-messaging",
+  "categoryId": "content",
+  "title": "라이프사이클 메시징",
+  "description": "고객 여정 단계별 이메일·메시지 커뮤니케이션 설계로 전환과 유지를 이끄는 클러스터.",
+  "order": 1,
+  "hubPath": "/content/clusters/lifecycle-messaging/",
+  "primaryEntityId": "lifecycle-messaging",
+  "leafSlugs": ["content/email-marketing"],
+  "status": "active"
+}

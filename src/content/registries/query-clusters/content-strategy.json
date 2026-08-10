@@ -1,0 +1,11 @@
+{
+  "id": "content-strategy",
+  "categoryId": "content",
+  "title": "콘텐츠 전략",
+  "description": "브랜드 목표를 달성하는 콘텐츠 기획·운영 전략을 다루는 클러스터.",
+  "order": 0,
+  "hubPath": "/content/clusters/content-strategy/",
+  "primaryEntityId": "content-marketing",
+  "leafSlugs": ["content/content-strategy"],
+  "status": "active"
+}

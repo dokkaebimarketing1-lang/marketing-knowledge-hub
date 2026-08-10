@@ -1,0 +1,8 @@
+{
+  "id": "geo",
+  "name": "GEO (Generative Engine Optimization)",
+  "type": "discipline",
+  "description": "생성형 AI 엔진이 답변을 생성할 때 브랜드·콘텐츠를 인용·추천하도록 구조화하는 최적화.",
+  "sameAs": [],
+  "status": "active"
+}

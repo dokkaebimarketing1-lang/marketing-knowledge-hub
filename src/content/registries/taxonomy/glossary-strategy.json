@@ -1,0 +1,10 @@
+{
+  "id": "glossary-strategy",
+  "label": "전략·일반",
+  "kind": "glossary",
+  "description": "마케팅 전략·프레임워크와 경영 지표(KPI·OKR·NPS 등) 일반 용어를 모은 카테고리.",
+  "order": 4,
+  "hue": 286,
+  "hubPath": "/glossary/#glossary-strategy",
+  "status": "active"
+}

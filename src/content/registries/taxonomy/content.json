@@ -1,0 +1,10 @@
+{
+  "id": "content",
+  "label": "콘텐츠 마케팅",
+  "kind": "knowledge",
+  "description": "콘텐츠 전략·스토리텔링·브랜딩 등 콘텐츠로 고객을 움직이는 법을 다루는 카테고리.",
+  "order": 4,
+  "hue": 42,
+  "hubPath": "/content/",
+  "status": "active"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "sns",
+  "label": "SNS 마케팅",
+  "kind": "knowledge",
+  "description": "인스타그램·유튜브·카톡·라이브커머스 등 채널별 SNS 마케팅 전략을 다루는 카테고리.",
+  "order": 2,
+  "hue": 262,
+  "hubPath": "/sns/",
+  "status": "active"
+}
