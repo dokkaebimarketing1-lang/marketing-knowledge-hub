@@ -1,0 +1,14 @@
+term: "ARPPU"
+definition: "유료 결제 사용자 1인당 평균 매출(Average Revenue Per Paying User). ARPPU = 총 매출
+  ÷ 유료 사용자 수. 예: 매출 1억 원, 결제자 1만 명 → ARPPU 1만 원."
+aliases:
+  - 유료 사용자당 평균 매출
+  - Average Revenue Per Paying User
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [arpu, ltv, aov]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

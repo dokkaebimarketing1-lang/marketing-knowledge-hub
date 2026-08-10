@@ -1,0 +1,14 @@
+term: "퍼널"
+definition: "사용자가 전환까지 거치는 단계별 여정을 깔때기 형태로 시각화한 것(Funnel). 단계별 전환율·이탈을 분석해 병목을
+  개선한다. 예: 방문 → 상품 조회 → 장바구니 → 결제."
+aliases:
+  - 유입경로
+  - Funnel
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc, ga4-events-devguide]
+relatedIds: [conversion, marketing-funnel, segment]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,14 @@
+term: "CVR"
+definition: "방문·노출 대비 목표 행동(구매, 가입 등) 완료 비율(Conversion Rate). CVR = (전환 수 ÷ 방문자
+  수) × 100. 예: 방문자 1,000명 중 50명 구매 → CVR 5%."
+aliases:
+  - 전환율
+  - Conversion Rate
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, ga4-key-events-doc]
+relatedIds: [conversion, cpa, cro]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

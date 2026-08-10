@@ -1,0 +1,14 @@
+term: "페이지뷰"
+definition: "웹사이트에서 페이지가 조회된 횟수(Pageview, PV). 페이지 로드 시 발생하는 이벤트로 집계된다. 예: 한
+  사용자가 페이지 5개를 보면 PV 5."
+aliases:
+  - PV
+  - Pageview
+categoryId: glossary-analytics
+sourceIds: [ga4-events-devguide, ga4-session-doc]
+relatedIds: [session, engagement-rate, user]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

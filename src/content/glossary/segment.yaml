@@ -1,0 +1,13 @@
+term: "세그먼트"
+definition: "특정 조건으로 나눈 데이터의 하위 집합(Segment). GA4는 사용자·세션·이벤트 기준 세그먼트를 지원한다. 예:
+  \"모바일 기기 사용자\" 세그먼트로 전환율 비교."
+aliases:
+  - Segment
+categoryId: glossary-analytics
+sourceIds: [ga4-events-devguide, ga4-key-events-doc]
+relatedIds: [audience, cohort, funnel]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

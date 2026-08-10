@@ -1,0 +1,15 @@
+term: "마케팅 퍼널"
+definition: "인지(Awareness) → 관심(Interest) → 고려(Consideration) → 구매(Purchase) →
+  충성(Loyalty) 단계로 고객 여정을 구조화한 모델(Marketing Funnel). 단계별 목표와 전략을 수립하는 기반이 된다. 예:
+  상단(인지)은 광고, 하단(구매)은 프로모션 운영."
+aliases:
+  - Marketing Funnel
+  - 구매 퍼널
+categoryId: glossary-strategy
+sourceIds: [hubspot-social-media-marketing-report, stibee-email-marketing-data]
+relatedIds: [funnel, customer-journey, aida]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

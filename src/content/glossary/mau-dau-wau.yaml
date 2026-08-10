@@ -1,0 +1,15 @@
+term: "MAU/DAU/WAU"
+definition: "월간/일간/주간 활성 사용자 수(Monthly/Daily/Weekly Active Users). 서비스의 활성 규모와
+  참여도를 나타내는 지표이다. 예: DAU 5,000, MAU 30,000."
+aliases:
+  - 월간 활성 사용자
+  - 일간 활성 사용자
+  - 주간 활성 사용자
+categoryId: glossary-analytics
+sourceIds: [ga4-session-doc]
+relatedIds: [active-user, retention, north-star-metric]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

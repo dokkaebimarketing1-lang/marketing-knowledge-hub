@@ -1,0 +1,13 @@
+term: "쿠키"
+definition: "웹브라우저에 저장되는 작은 데이터 파일로, 사용자 식별·세션 유지·선호도 저장에 사용된다. GA4는 퍼스트파티 쿠키
+  _ga에 클라이언트 ID를 저장한다. 예: 로그인 유지, 장바구니 보존, 재방문자 인식."
+aliases:
+  - Cookie
+categoryId: glossary-ad-performance
+sourceIds: [ga4-events-devguide, google-ads-optimization-guide]
+relatedIds: [first-party-cookie, third-party-cookie, cookieless, pixel]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

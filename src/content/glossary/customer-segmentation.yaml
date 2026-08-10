@@ -1,0 +1,13 @@
+term: "고객 세분화"
+definition: "고객을 인구통계·행동·가치 등 기준으로 유사한 그룹으로 나누는 과정(Customer Segmentation).
+  타겟팅·메시지 최적화의 기반이다. 예: 신규 고객·단골 고객·이탈 위험 고객으로 구분."
+aliases:
+  - Customer Segmentation
+categoryId: glossary-strategy
+sourceIds: [stibee-email-marketing-data, hubspot-social-media-marketing-report]
+relatedIds: [targeting, icp, crm]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

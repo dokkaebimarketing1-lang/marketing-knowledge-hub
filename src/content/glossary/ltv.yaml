@@ -1,0 +1,14 @@
+term: "LTV"
+definition: "한 고객이 평생 동안 브랜드에 기여하는 총 수익(Customer Lifetime Value). LTV = 평균 구매 금액
+  × 구매 빈도 × 고객 유지 기간. 예: 평균 4만 원 × 연 3회 × 3년 = 36만 원."
+aliases:
+  - 고객 생애 가치
+  - Customer Lifetime Value
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [cac, ltv-cac-ratio, arpu]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

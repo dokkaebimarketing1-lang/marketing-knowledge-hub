@@ -1,0 +1,14 @@
+term: "MRR"
+definition: "구독형 비즈니스에서 매월 반복 발생하는 정기 매출(Monthly Recurring Revenue). SaaS·구독
+  서비스의 핵심 성장 지표이다. 예: 유료 구독자 1,000명 × 월 3만 원 = MRR 3,000만 원."
+aliases:
+  - 월간 반복 매출
+  - Monthly Recurring Revenue
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [arpu, retention, north-star-metric]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

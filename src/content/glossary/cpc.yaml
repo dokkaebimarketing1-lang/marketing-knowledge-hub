@@ -1,0 +1,14 @@
+term: "CPC"
+definition: "광고 클릭 1회당 지불하는 비용(Cost Per Click). PPC 광고의 기본 과금 단위이다. 예: 검색 광고에서
+  클릭 1회에 500원 지불."
+aliases:
+  - 클릭당 비용
+  - Cost Per Click
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-quality-score, google-ads-optimization-guide]
+relatedIds: [ppc, ctr, cpm]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

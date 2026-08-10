@@ -1,0 +1,13 @@
+term: "인바운드 마케팅"
+definition: "블로그, 콘텐츠, SEO 등을 통해 고객이 자발적으로 찾아오도록 유도하는 마케팅(Inbound Marketing).
+  푸시형 광고(아웃바운드)와 대비된다. 예: 유용한 가이드를 공개해 자연 검색으로 고객 유입."
+aliases:
+  - Inbound Marketing
+categoryId: glossary-strategy
+sourceIds: [hubspot-social-media-marketing-report]
+relatedIds: [content-marketing, seo, cta]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

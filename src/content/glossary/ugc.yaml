@@ -1,0 +1,14 @@
+term: "UGC"
+definition: "브랜드가 아닌 일반 사용자가 제작한 콘텐츠(User Generated Content). 리뷰, 후기, 체험 영상 등이
+  해당하며, 신뢰도가 높아 마케팅 소재로 활용된다. 예: 고객이 올린 구매 후기 사진을 공식 채널에 재공유."
+aliases:
+  - 사용자 생성 콘텐츠
+  - User Generated Content
+categoryId: glossary-social-content
+sourceIds: [tiktok-newsroom-live-commerce, hubspot-social-media-marketing-report]
+relatedIds: [influencer, content-marketing, reach]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

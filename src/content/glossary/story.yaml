@@ -1,0 +1,13 @@
+term: "스토리"
+definition: "24시간 후 사라지는 일시적 콘텐츠. 인스타그램·페이스북 등에서 제공하며, 설문·링크 스티커 등 인터랙션 기능으로
+  소통·전환 유도에 활용된다. 예: 신상품 공개를 스토리 스포일러로 예고."
+aliases:
+  - Story
+categoryId: glossary-social-content
+sourceIds: [meta-instagram-stories-ads, hubspot-social-media-marketing-report]
+relatedIds: [reach, engagement-rate-sns, content-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

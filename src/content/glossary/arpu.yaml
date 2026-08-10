@@ -1,0 +1,14 @@
+term: "ARPU"
+definition: "총 매출을 전체 사용자 수로 나눈 값(Average Revenue Per User). ARPU = 총 매출 ÷ 전체
+  사용자 수. 예: 매출 1억 원, 사용자 10만 명 → ARPU 100원."
+aliases:
+  - 사용자당 평균 매출
+  - Average Revenue Per User
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [arppu, aov, mrr]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

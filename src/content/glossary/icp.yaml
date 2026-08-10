@@ -1,0 +1,14 @@
+term: "ICP"
+definition: "가장 가치 있는 고객의 특징을 정의한 프로필(Ideal Customer Profile). 타겟팅·메시징·제품 개발의
+  기준이 된다. 예: \"월 매출 10억 이상의 B2B SaaS 마케팅 팀\"을 ICP로 정의."
+aliases:
+  - 이상적 고객 프로필
+  - Ideal Customer Profile
+categoryId: glossary-strategy
+sourceIds: [hubspot-social-media-marketing-report]
+relatedIds: [customer-segmentation, targeting, value-proposition]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

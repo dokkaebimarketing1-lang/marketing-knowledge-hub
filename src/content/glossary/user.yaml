@@ -1,0 +1,13 @@
+term: "사용자"
+definition: "사이트·앱을 방문한 고유 개인. GA4는 쿠키·기기 ID·사용자 ID 등으로 구분한다. 예: 같은 사람이 PC와 모바일로
+  방문해도 동일 사용자로 집계(교차 기기 추적 시)."
+aliases:
+  - User
+categoryId: glossary-analytics
+sourceIds: [ga4-session-doc, ga4-key-events-doc]
+relatedIds: [session, active-user, new-returning-user]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,13 @@
+term: "퍼스트파티 데이터"
+definition: "자사가 고객과의 직접 관계를 통해 수집한 데이터(구매 이력, 회원 정보, 앱 행동 등). 쿠키리스 시대의 핵심 데이터
+  자산이다. 예: 자사 앱에서 수집한 사용자 구매 패턴."
+aliases:
+  - First-Party Data
+categoryId: glossary-strategy
+sourceIds: [kakao-moment-guide, stibee-email-marketing-data]
+relatedIds: [cookie, cookieless, opt-in-opt-out]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

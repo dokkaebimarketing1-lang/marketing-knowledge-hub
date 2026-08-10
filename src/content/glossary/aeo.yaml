@@ -1,0 +1,15 @@
+term: "AEO"
+definition: "음성 검색, 피처드 스니펫, AI 개요 등에서 콘텐츠가 '직접 답변'으로 채택되도록 최적화하는 기법. 질문형 헤딩,
+  명확한 답변 구조, FAQ 스키마 등이 핵심이다. 예: 'OO이란?' 질문에 1~2문장의 직접 답을 본문 상단에 배치해 스니펫 획득을
+  노림."
+aliases:
+  - 답변 엔진 최적화
+  - Answer Engine Optimization
+categoryId: glossary-search-ai
+sourceIds: [google-ai-optimization-guide, google-ai-features-doc]
+relatedIds: [geo, seo, serp]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

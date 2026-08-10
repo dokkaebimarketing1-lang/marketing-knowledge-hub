@@ -1,0 +1,14 @@
+term: "옵트인/옵트아웃"
+definition: "정보 수신·마케팅 참여에 대한 동의(옵트인) 또는 거부(옵트아웃) 설정. GDPR 등 개인정보보호 규제에서 동의 관리의
+  핵심이다. 예: 뉴스레터 구독 시 이메일 수신에 동의(옵트인)를 받음."
+aliases:
+  - Opt-in
+  - Opt-out
+categoryId: glossary-strategy
+sourceIds: [stibee-email-marketing-data]
+relatedIds: [first-party-data, cookie, crm]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

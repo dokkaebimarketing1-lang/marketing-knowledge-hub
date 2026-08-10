@@ -1,0 +1,14 @@
+term: "CAC"
+definition: "신규 고객 1명을 확보하는 데 드는 총비용(Customer Acquisition Cost, 마케팅·영업 비용 포함).
+  CAC = 총 획득 비용 ÷ 신규 고객 수. 예: 200만 원 지출, 신규 고객 100명 → CAC 2만 원."
+aliases:
+  - 고객 획득 비용
+  - Customer Acquisition Cost
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [ltv, ltv-cac-ratio, cpa]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,13 @@
+term: "이탈률"
+definition: "참여하지 않은 세션의 비율(Bounce Rate). GA4에서는 100% − 참여율로 정의되며, UA 대비 낮게 측정되는
+  경향이 있다. 예: 참여율 60%면 이탈률 40%."
+aliases:
+  - Bounce Rate
+categoryId: glossary-analytics
+sourceIds: [ga4-engagement-rate-doc, ga4-session-doc]
+relatedIds: [engagement-rate, session, landing-page]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,14 @@
+term: "코호트"
+definition: "특정 기간·특징을 공유하는 사용자 그룹(동질 집단). 코호트 분석으로 시간 경과에 따른 리텐션·행동 변화를 파악한다.
+  예: 1월 첫 주 가입자 그룹의 30일 후 잔존율."
+aliases:
+  - 동질 집단
+  - Cohort
+categoryId: glossary-analytics
+sourceIds: [ga4-session-doc, ga4-key-events-doc]
+relatedIds: [retention, segment, north-star-metric]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

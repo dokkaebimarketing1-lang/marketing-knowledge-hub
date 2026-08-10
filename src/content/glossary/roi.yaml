@@ -1,0 +1,15 @@
+term: "ROI"
+definition: "투자 대비 순이익의 비율(Return On Investment). ROI = (순이익 ÷ 투자비용) × 100.
+  ROAS가 매출 기준이라면 ROI는 이익 기준으로, 원가·비용을 반영한다. 예: 100만 원 투자로 순이익 150만 원 → ROI
+  150%."
+aliases:
+  - 투자 수익률
+  - Return On Investment
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, ga4-key-events-doc]
+relatedIds: [roas, cps, mer]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,14 @@
+term: "CRO"
+definition: "데이터·실험을 통해 웹사이트·랜딩페이지의 전환율을 높이는 활동(Conversion Rate Optimization).
+  A/B 테스트, 히트맵, 사용자 조사 등을 활용한다. 예: 폼 입력 단계를 줄여 가입 전환율 20% 개선."
+aliases:
+  - 전환율 최적화
+  - Conversion Rate Optimization
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc, ga4-engagement-rate-doc]
+relatedIds: [ab-testing, cvr, landing-page]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

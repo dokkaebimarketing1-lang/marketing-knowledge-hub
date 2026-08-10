@@ -1,0 +1,13 @@
+term: "검색 의도"
+definition: "사용자가 검색어를 입력한 배경 목적(정보 탐색, 구매 의도, 내비게이션 등). 콘텐츠·광고를 검색 의도에 맞추면 전환율이
+  높아진다. 예: \"가격 비교\" 검색은 구매 의도가 높아 상품 페이지를 노출."
+aliases:
+  - Search Intent
+categoryId: glossary-search-ai
+sourceIds: [google-ai-features-doc, naver-search-advisor-seo-guide]
+relatedIds: [keyword, seo, landing-page]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

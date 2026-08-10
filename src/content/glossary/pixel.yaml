@@ -1,0 +1,13 @@
+term: "픽셀"
+definition: "웹사이트에 삽입해 사용자 행동 데이터를 광고 플랫폼으로 전송하는 추적 코드 조각. 메타 픽셀, 틱톡 픽셀 등이 있으며
+  리타겟팅·전환 측정에 사용된다. 예: 구매 완료 페이지에 메타 픽셀을 설치해 전환 추적."
+aliases:
+  - Pixel
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, meta-instagram-stories-ads]
+relatedIds: [retargeting, cookie, conversion]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

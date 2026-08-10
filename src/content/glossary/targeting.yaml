@@ -1,0 +1,13 @@
+term: "타겟팅"
+definition: "세분화된 고객 그룹 중 마케팅 활동의 대상(타깃)을 선정하는 과정(Targeting). 예: 20대 여성 뷰티 관심자를
+  광고 타깃으로 설정."
+aliases:
+  - Targeting
+categoryId: glossary-strategy
+sourceIds: [kakao-moment-guide, google-ads-optimization-guide]
+relatedIds: [customer-segmentation, audience, icp]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

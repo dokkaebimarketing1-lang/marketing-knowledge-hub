@@ -1,0 +1,14 @@
+term: "LLMO"
+definition: "대규모 언어모델(LLM) 기반 검색·챗봇에서 브랜드가 답변에 포함되도록 최적화하는 개념. GEO와 유사하게 AI 답변
+  소스로 채택되는 것을 목표로 한다. 예: 챗GPT가 \"OO 추천\" 질문에 우리 제품을 언급하도록 신뢰성 있는 데이터 제공."
+aliases:
+  - 대규모 언어모델 최적화
+  - LLM Optimization
+categoryId: glossary-search-ai
+sourceIds: [google-ai-optimization-guide, google-ai-features-doc]
+relatedIds: [geo, aeo]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

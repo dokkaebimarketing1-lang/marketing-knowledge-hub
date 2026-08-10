@@ -1,0 +1,11 @@
+# 용어사전 YAML 파일은 이 디렉토리에 저장됩니다.
+
+# 파일명 규칙: <slug>.yaml  (예: roas.yaml, ctr.yaml)
+# 스키마: content.config.ts 의 glossary 컬렉션 참고
+#   term: string (필수)
+#   category: string (필수) — 용어 분류 (광고/콘텐츠/퍼포먼스 등)
+#   definition: string (필수)
+#   aliases: string[] (선택)
+#   related: string[] (선택)
+
+# 현재 디렉토리가 빈 상태로 유지되지 않도록 추적용 파일입니다.

@@ -1,0 +1,13 @@
+term: "퍼스트파티 쿠키"
+definition: "사용자가 방문 중인 사이트(1차 도메인)가 직접 발행하는 쿠키. 서드파티 쿠키 중단 이후 광고 측정의 기반이 되고 있다.
+  예: GA4가 _ga 쿠키로 방문자 구분."
+aliases:
+  - First-Party Cookie
+categoryId: glossary-ad-performance
+sourceIds: [ga4-events-devguide, google-ads-optimization-guide]
+relatedIds: [cookie, third-party-cookie, first-party-data]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

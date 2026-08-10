@@ -1,0 +1,13 @@
+term: "A/B 테스트"
+definition: "두 가지 버전(A/B)을 무작위로 나눠 비교해 어느 쪽이 더 효과적인지 데이터로 판단하는 실험 방법. 랜딩페이지·광고
+  소재·이메일 최적화에 사용된다. 예: CTA 버튼 색상을 빨강(A)과 파랑(B)으로 나눠 전환율 비교."
+aliases:
+  - A/B Testing
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc, ga4-engagement-rate-doc]
+relatedIds: [cro, cvr, data-driven-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

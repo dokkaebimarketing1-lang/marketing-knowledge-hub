@@ -1,0 +1,13 @@
+term: "콜드 스타트"
+definition: "초기 데이터·고객이 부족한 상황에서 서비스·마케팅을 시작하는 문제(Cold Start). 초기 고객 확보와 데이터 축적이
+  관건이다. 예: 신규 SNS 계정이 팔로워 없이 시작해 초기 콘텐츠 노출이 어려운 상황."
+aliases:
+  - Cold Start
+categoryId: glossary-strategy
+sourceIds: [kakao-moment-guide, hubspot-social-media-marketing-report]
+relatedIds: [growth-hacking, ua, retention]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

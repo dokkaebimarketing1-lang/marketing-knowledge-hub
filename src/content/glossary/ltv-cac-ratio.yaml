@@ -1,0 +1,13 @@
+term: "LTV:CAC 비율"
+definition: "고객 생애 가치 대비 획득 비용의 비율(LTV:CAC Ratio). 일반적으로 3:1 이상이면 건전한 획득 구조로 본다.
+  예: LTV 30만 원, CAC 10만 원 → 3:1."
+aliases:
+  - LTV:CAC Ratio
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [ltv, cac, roi]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

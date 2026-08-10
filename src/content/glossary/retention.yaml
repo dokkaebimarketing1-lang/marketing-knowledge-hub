@@ -1,0 +1,14 @@
+term: "리텐션"
+definition: "신규 사용자가 일정 기간 후에도 서비스를 계속 사용하는 비율(유지율). 서비스의 지속 사용·제품-시장 적합성(PMF)을
+  평가하는 핵심 지표이다. 예: 1주차 가입자 중 4주차에 재방문한 비율이 30%."
+aliases:
+  - 유지율
+  - Retention
+categoryId: glossary-analytics
+sourceIds: [ga4-session-doc, ga4-key-events-doc]
+relatedIds: [cohort, retention-marketing, mau-dau-wau]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

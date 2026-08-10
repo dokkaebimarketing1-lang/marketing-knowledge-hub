@@ -1,0 +1,13 @@
+term: "SNS 참여율"
+definition: "SNS 콘텐츠에서 좋아요·댓글·공유 등 상호작용이 발생한 비율(Engagement Rate). (상호작용 수 ÷
+  도달·노출 수)로 계산하며, 계정의 콘텐츠 품질·알고리즘 적중도를 평가한다. 예: 좋아요 1,000 / 도달 50,000 = 2% 참여율."
+aliases:
+  - Engagement Rate
+categoryId: glossary-social-content
+sourceIds: [datareportal-digital-2026-korea, hubspot-social-media-marketing-report]
+relatedIds: [reach, nano-micro-influencer, content-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

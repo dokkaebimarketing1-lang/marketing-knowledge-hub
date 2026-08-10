@@ -1,0 +1,19 @@
+term: "PPC"
+definition: "광고가 클릭될 때만 비용이 발생하는 광고 모델. 구글 검색 광고, 네이버 파워링크 등이 대표적이다. 예: 검색 광고에서
+  \"무선 이어폰\" 키워드 입찰."
+aliases:
+  - 클릭당 과금 광고
+  - Pay-Per-Click
+categoryId: glossary-search-ai
+sourceIds:
+  [
+    google-ads-optimization-guide,
+    google-ads-quality-score,
+    naver-ads-quality-score-notice
+  ]
+relatedIds: [sem, cpc, keyword]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

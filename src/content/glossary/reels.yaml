@@ -1,0 +1,14 @@
+term: "릴스"
+definition: "인스타그램의 짧은 세로형 영상 기능. 음악·효과를 활용한 숏폼으로, 알고리즘 기반 추천으로 비팔로워에게도 노출된다. 예:
+  신메뉴 조리 과정을 릴스로 공유해 도달 확대."
+aliases:
+  - Reels
+  - 인스타그램 릴스
+categoryId: glossary-social-content
+sourceIds: [meta-instagram-stories-ads, datareportal-digital-2026-korea]
+relatedIds: [short-form, reach, engagement-rate-sns]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,14 @@
+term: "잠재고객"
+definition: "특정 조건(행동, 인구통계, 관심사 등)으로 정의된 사용자 그룹(오디언스). 광고 타겟팅·리마케팅·분석에 활용된다.
+  GA4의 잠재고객은 세그먼트와 유사하지만 기능이 다르다. 예: \"최근 7일 내 장바구니 추가 사용자\" 오디언스 생성."
+aliases:
+  - 오디언스
+  - Audience
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, kakao-moment-guide]
+relatedIds: [segment, retargeting, targeting]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

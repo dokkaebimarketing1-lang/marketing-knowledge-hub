@@ -1,0 +1,14 @@
+term: "KPI"
+definition: "목표 달성 정도를 정량적으로 측정하는 지표(Key Performance Indicator). 전환율, 매출, 신규 고객
+  수, ROAS 등이 대표적이다. 예: 분기 목표를 \"CAC 2만 원 이하\" KPI로 관리."
+aliases:
+  - 핵심 성과 지표
+  - Key Performance Indicator
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [okr, roi, cvr]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

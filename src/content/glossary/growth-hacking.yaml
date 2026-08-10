@@ -1,0 +1,13 @@
+term: "그로스해킹"
+definition: "데이터와 실험을 기반으로 제품·서비스의 성장을 빠르게 견인하는 마케팅 방법론. 개발·데이터·마케팅을 융합한다. 예: 가입
+  유도 문구를 10가지로 실험해 최적안 도출."
+aliases:
+  - Growth Hacking
+categoryId: glossary-analytics
+sourceIds: [datareportal-digital-2026-korea, ga4-key-events-doc]
+relatedIds: [aarrr, ab-testing, data-driven-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

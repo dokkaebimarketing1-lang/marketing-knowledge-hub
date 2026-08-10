@@ -1,0 +1,15 @@
+term: "SERP"
+definition: "사용자가 검색어를 입력했을 때 검색 엔진이 보여주는 결과 화면. 자연 검색 결과, 유료 광고, 피처드 스니펫, AI 개요
+  등으로 구성된다. 상위 1위 자연 결과의 평균 CTR은 약 39.8%로 알려져 있다. 예: 구글에서 \"마케팅 용어\"를 검색했을 때 나오는
+  전체 화면."
+aliases:
+  - 검색 결과 페이지
+  - Search Engine Results Page
+categoryId: glossary-search-ai
+sourceIds: [google-ai-features-doc, naver-search-advisor-seo-guide]
+relatedIds: [seo, organic-traffic, ppc]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

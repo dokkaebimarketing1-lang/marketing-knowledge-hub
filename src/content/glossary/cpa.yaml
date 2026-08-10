@@ -1,0 +1,14 @@
+term: "CPA"
+definition: "전환·획득(가입, 구매, 설치 등) 1건당 지불하는 비용(Cost Per Acquisition). CPA = 광고비 ÷
+  획득 수. 예: 100만 원 광고비로 50건 가입 → CPA 2만 원."
+aliases:
+  - 획득당 비용
+  - Cost Per Acquisition
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, kakao-moment-guide]
+relatedIds: [cvr, cac, performance-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,15 @@
+term: "MER"
+definition: "전체 마케팅 비용 대비 총 매출의 비율(Marketing Efficiency Ratio). MER = 총 매출 ÷ 총
+  마케팅 비용. 채널별 ROAS를 넘어 전체 마케팅 투자의 효율을 평가한다. 예: 매출 1억 원, 마케팅 비용 2,000만 원 → MER
+  5.0."
+aliases:
+  - 마케팅 효율 비율
+  - Marketing Efficiency Ratio
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, ga4-key-events-doc]
+relatedIds: [roas, roi, performance-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

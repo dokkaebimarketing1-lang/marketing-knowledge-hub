@@ -1,0 +1,13 @@
+term: "인플루언서"
+definition: "SNS에서 다수의 팔로워와 영향력을 가진 개인으로, 브랜드 메시지를 전파하는 매개체. 팔로워 규모에 따라
+  나노·마이크로·매크로·메가 인플루언서로 나뉜다. 예: 뷰티 인플루언서가 신제품 리뷰 콘텐츠를 게시."
+aliases:
+  - Influencer
+categoryId: glossary-social-content
+sourceIds: [hubspot-social-media-marketing-report, youtube-partner-program-policy]
+relatedIds: [nano-micro-influencer, ugc, affiliate-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

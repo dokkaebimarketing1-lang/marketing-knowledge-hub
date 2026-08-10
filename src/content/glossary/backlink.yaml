@@ -1,0 +1,13 @@
+term: "백링크"
+definition: "다른 웹사이트에서 내 사이트로 연결되는 링크. 구글은 백링크를 신뢰·권위 신호로 평가하며, 양보다 품질(권위 있는
+  사이트에서의 링크)이 중요하다. 예: 유명 IT 매체 기사에서 우리 서비스를 소개하며 링크를 걸어줌."
+aliases:
+  - Backlink
+categoryId: glossary-search-ai
+sourceIds: [naver-search-advisor-seo-guide, google-ai-features-doc]
+relatedIds: [seo, organic-traffic]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

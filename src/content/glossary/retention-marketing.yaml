@@ -1,0 +1,13 @@
+term: "리텐션 마케팅"
+definition: "기존 고객의 재구매·재방문을 유도하는 마케팅(Retention Marketing). 이메일, 푸시, 멤버십, 리워드 등을
+  활용한다. 예: 구매 후 30일 뒤 재구매 쿠폰 자동 발송."
+aliases:
+  - Retention Marketing
+categoryId: glossary-strategy
+sourceIds: [stibee-email-marketing-data, kakao-moment-guide]
+relatedIds: [retention, remarketing, crm]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

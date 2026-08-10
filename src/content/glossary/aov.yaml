@@ -1,0 +1,14 @@
+term: "AOV"
+definition: "주문 1건당 평균 결제 금액(Average Order Value). AOV = 총 매출 ÷ 주문 수. 객단가 향상의 기준
+  지표이다. 예: 총매출 1,000만 원, 주문 200건 → AOV 5만 원."
+aliases:
+  - 평균 주문 금액
+  - Average Order Value
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, ga4-key-events-doc]
+relatedIds: [ltv, arpu, conversion]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

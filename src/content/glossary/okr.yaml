@@ -1,0 +1,15 @@
+term: "OKR"
+definition: "정성적 목표(Objectives)와 측정 가능한 핵심 결과(Key Results)로 목표를 설정·관리하는 프레임워크.
+  KPI가 지표 추적이라면 OKR은 목표 설정·달성 방법론이다. 예: 목표 \"브랜드 인지도 상승\" → KR \"웹 방문자 100만 명
+  달성\"."
+aliases:
+  - 목표와 핵심 결과
+  - Objectives and Key Results
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [kpi, north-star-metric, data-driven-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

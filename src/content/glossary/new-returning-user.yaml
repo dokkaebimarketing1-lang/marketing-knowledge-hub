@@ -1,0 +1,15 @@
+term: "신규/재사용자"
+definition: "첫 방문 이력이 없는 사용자(신규)와 이전 방문 이력이 있는 사용자(재방문). 신규 유입과 재방문 비중을 비교해 마케팅
+  효과를 평가한다. 예: 신규 60%·재방문 40%면 유입은 많으나 리텐션 개선 필요."
+aliases:
+  - 신규 사용자
+  - 재방문 사용자
+  - New/Returning User
+categoryId: glossary-analytics
+sourceIds: [ga4-session-doc, ga4-key-events-doc]
+relatedIds: [user, active-user, retention]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

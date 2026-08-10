@@ -1,0 +1,14 @@
+term: "UA"
+definition: "신규 사용자·고객을 유입시키는 활동 전반(User Acquisition). 앱 마케팅에서는 설치 유도(CPI 캠페인)가
+  대표적이다. 예: 앱 설치 광고 캠페인으로 신규 사용자 확보."
+aliases:
+  - 사용자 획득
+  - User Acquisition
+categoryId: glossary-strategy
+sourceIds: [google-ads-optimization-guide, kakao-moment-guide]
+relatedIds: [cpi, cold-start, k-factor]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

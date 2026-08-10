@@ -1,0 +1,13 @@
+term: "옴니채널"
+definition: "온·오프라인의 모든 채널을 통합해 고객에게 일관된 경험을 제공하는 전략(Omnichannel). 채널 간 데이터·경험을
+  연결한다. 예: 온라인 장바구니 담긴 상품을 오프라인 매장에서 확인 가능."
+aliases:
+  - Omnichannel
+categoryId: glossary-strategy
+sourceIds: [kakao-moment-guide, hubspot-social-media-marketing-report]
+relatedIds: [multichannel, customer-journey, crm]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

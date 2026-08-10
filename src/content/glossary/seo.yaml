@@ -1,0 +1,19 @@
+term: "SEO"
+definition: "검색 엔진 결과에서 웹사이트의 자연(유기) 노출 순위를 높이기 위한 활동 전반. 키워드 최적화, 콘텐츠 품질, 백링크,
+  기술적 최적화를 포함한다. 예: 상품 리뷰 글의 키워드를 정리해 구글 1페이지 노출을 노림."
+aliases:
+  - 검색 엔진 최적화
+  - Search Engine Optimization
+categoryId: glossary-search-ai
+sourceIds:
+  [
+    google-ai-features-doc,
+    google-ai-optimization-guide,
+    naver-search-advisor-seo-guide
+  ]
+relatedIds: [geo, sem, keyword, backlink, organic-traffic]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

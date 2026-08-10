@@ -1,0 +1,13 @@
+term: "활성 사용자"
+definition: "참여 세션 등 활성 조건을 충족한 사용자(Active User). GA4 보고서의 기본 사용자 지표이며, 총 사용자보다
+  엄격한 기준으로 집계된다. 예: 10초 이상 머문 방문자만 활성 사용자로 인정."
+aliases:
+  - Active User
+categoryId: glossary-analytics
+sourceIds: [ga4-session-doc, ga4-key-events-doc]
+relatedIds: [user, new-returning-user, session]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

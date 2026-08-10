@@ -1,0 +1,13 @@
+term: "넛지"
+definition: "선택을 강요하지 않으면서 사람들의 행동을 바람직한 방향으로 유도하는 개입(Nudge). 행동경제학(Thaler &
+  Sunstein) 개념을 마케팅에 적용한다. 예: \"대부분의 고객이 이 옵션을 선택했습니다\" 문구로 기본 옵션 선택 유도."
+aliases:
+  - Nudge
+categoryId: glossary-strategy
+sourceIds: [stibee-email-marketing-data, hubspot-social-media-marketing-report]
+relatedIds: [landing-page, cro, cta]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

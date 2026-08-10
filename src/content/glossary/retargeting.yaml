@@ -1,0 +1,13 @@
+term: "리타겟팅"
+definition: "사이트를 방문했거나 특정 행동을 한 사용자에게 다시 광고를 노출하는 기법. 픽셀·쿠키로 사용자를 식별하며, 이탈한 잠재
+  고객을 재유입시키는 데 효과적이다. 예: 장바구니에 담고 이탈한 사용자에게 해당 상품 광고 재노출."
+aliases:
+  - Retargeting
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, google-ads-quality-score]
+relatedIds: [remarketing, pixel, audience]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

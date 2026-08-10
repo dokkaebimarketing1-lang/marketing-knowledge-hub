@@ -1,0 +1,14 @@
+term: "도달"
+definition: "콘텐츠·광고를 본 고유 사용자 수. 노출(Impressions)이 노출 횟수라면 도달은 고유 사용자 기준이다. 예: 릴스
+  도달 10만 회 = 10만 명이 콘텐츠를 봄."
+aliases:
+  - 도달 수
+  - Reach
+categoryId: glossary-social-content
+sourceIds: [datareportal-digital-2026-korea, hubspot-social-media-marketing-report]
+relatedIds: [impression, engagement-rate-sns, reels]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

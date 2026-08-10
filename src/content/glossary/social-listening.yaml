@@ -1,0 +1,13 @@
+term: "소셜 리스닝"
+definition: "SNS·커뮤니티에서 브랜드·키워드에 대한 소비자 언급을 모니터링·분석하는 기법. 감성 분석, 트렌드 파악, 이슈 대응에
+  활용된다. 예: 신제품 출시 후 \"OO 화장품 후기\" 언급을 수집해 평가 확인."
+aliases:
+  - Social Listening
+categoryId: glossary-social-content
+sourceIds: [hubspot-social-media-marketing-report, datareportal-digital-2026-korea]
+relatedIds: [hashtag, data-driven-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

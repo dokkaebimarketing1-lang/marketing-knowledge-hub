@@ -1,0 +1,14 @@
+term: "CPM"
+definition: "광고가 1,000회 노출될 때 지불하는 비용(Cost Per Mille). M은 로마 숫자 1,000을 의미하며, 브랜드
+  인지형(노출형) 광고에서 주로 사용된다. 예: CPM 10,000원 = 1,000회 노출에 10,000원."
+aliases:
+  - 1,000회 노출당 비용
+  - Cost Per Mille
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, kakao-moment-guide]
+relatedIds: [impression, ecpm, cpc]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

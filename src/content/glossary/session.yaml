@@ -1,0 +1,13 @@
+term: "세션"
+definition: "사용자가 웹사이트·앱에서 상호작용하는 일정 기간. GA4는 기본 30분 비활동 시 세션 종료로 처리한다. 예: 사용자가
+  페이지 3개를 연속 조회한 흐름 1건."
+aliases:
+  - Session
+categoryId: glossary-analytics
+sourceIds: [ga4-session-doc]
+relatedIds: [user, engagement-rate, bounce-rate]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

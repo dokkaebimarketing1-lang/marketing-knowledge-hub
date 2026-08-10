@@ -1,0 +1,13 @@
+term: "멀티채널"
+definition: "여러 채널을 동시에 운영하되 채널 간 통합·연결이 옴니채널보다 약한 형태(Multichannel). 예: 온라인몰,
+  오프라인 매장, SNS를 각각 별도 운영."
+aliases:
+  - Multichannel
+categoryId: glossary-strategy
+sourceIds: [kakao-moment-guide, hubspot-social-media-marketing-report]
+relatedIds: [omnichannel, crm]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

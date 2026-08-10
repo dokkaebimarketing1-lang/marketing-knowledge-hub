@@ -1,0 +1,13 @@
+term: "참여율"
+definition: "전체 세션 중 참여 세션(10초 이상, 전환 발생, 2회 이상 페이지뷰 등)의 비율(Engagement Rate).
+  GA4의 핵심 참여 지표이다. 예: 전체 1,000세션 중 130세션 참여 → 13%."
+aliases:
+  - Engagement Rate
+categoryId: glossary-analytics
+sourceIds: [ga4-engagement-rate-doc, ga4-session-doc]
+relatedIds: [bounce-rate, session, conversion]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

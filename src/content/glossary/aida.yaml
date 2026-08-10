@@ -1,0 +1,14 @@
+term: "AIDA 모델"
+definition: "소비자 구매 의사결정 과정을 주의(Attention)→관심(Interest)→욕구(Desire)→행동(Action)
+  4단계로 설명하는 고전적 마케팅 모델. 예: 광고(주의) → 혜택 설명(관심) → 한정판(욕구) → 구매 버튼(행동)."
+aliases:
+  - AIDA
+  - Attention-Interest-Desire-Action
+categoryId: glossary-strategy
+sourceIds: [hubspot-social-media-marketing-report]
+relatedIds: [marketing-funnel, customer-journey, cta]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

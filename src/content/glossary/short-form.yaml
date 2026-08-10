@@ -1,0 +1,14 @@
+term: "숏폼"
+definition: "15초~3분 내외의 짧은 세로형 영상 콘텐츠. 틱톡, 인스타그램 릴스, 유튜브 쇼츠가 대표 플랫폼이며, 높은 몰입도와
+  바이럴 확산성이 특징이다. 예: 제품 사용법을 30초 릴스로 제작."
+aliases:
+  - 짧은 세로형 영상
+  - Short-form
+categoryId: glossary-social-content
+sourceIds: [youtube-partner-program-policy, tiktok-newsroom-live-commerce]
+relatedIds: [reels, viral-marketing, reach]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

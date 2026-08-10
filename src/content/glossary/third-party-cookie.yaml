@@ -1,0 +1,13 @@
+term: "서드파티 쿠키"
+definition: "사용자가 방문한 사이트가 아닌 제3자 도메인이 발행하는 쿠키. 광고 리타겟팅·크로스사이트 추적에 쓰였으나, 브라우저
+  정책(GDPR, 쿠키리스 등)으로 제한·중단되는 추세다. 예: A 사이트에서 본 상품 광고가 B 사이트에 표시되는 것."
+aliases:
+  - Third-Party Cookie
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, ga4-session-doc]
+relatedIds: [cookie, first-party-cookie, cookieless]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

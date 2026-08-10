@@ -1,0 +1,14 @@
+term: "CPI"
+definition: "앱 설치 1건당 지불하는 비용(Cost Per Install). 모바일 앱 마케팅(UA)의 대표 과금·성과 지표이다.
+  예: 게임 앱 광고에서 설치 1건당 3,000원 지불."
+aliases:
+  - 설치당 비용
+  - Cost Per Install
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, meta-instagram-stories-ads]
+relatedIds: [ua, cpa, pixel]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

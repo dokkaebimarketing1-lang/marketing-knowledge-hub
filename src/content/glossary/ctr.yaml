@@ -1,0 +1,14 @@
+term: "CTR"
+definition: "광고·콘텐츠가 노출된 횟수 대비 클릭된 비율(Click-Through Rate). CTR = (클릭수 ÷ 노출수) ×
+  100. 광고 소재의 관심 유발 정도를 나타낸다. 예: 10만 회 노출, 3,000회 클릭 → CTR 3%."
+aliases:
+  - 클릭률
+  - Click-Through Rate
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-quality-score, google-ads-optimization-guide]
+relatedIds: [impression, cpc, cvr]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

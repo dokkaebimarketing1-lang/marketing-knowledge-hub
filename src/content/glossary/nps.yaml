@@ -1,0 +1,14 @@
+term: "NPS"
+definition: "\"이 서비스를 주변에 추천할 의향이 있나요?\"(0~10점)로 측정하는 고객 충성도 지표(Net Promoter
+  Score). NPS = 추천자(9~10점) 비율 − 비추천자(0~6점) 비율. 예: 추천자 50%, 비추천자 20% → NPS 30."
+aliases:
+  - 순추천 지수
+  - Net Promoter Score
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [retention, customer-segmentation, crm]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

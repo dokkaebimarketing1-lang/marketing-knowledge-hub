@@ -1,0 +1,13 @@
+term: "데이터 기반 마케팅"
+definition: "수집된 데이터를 분석해 의사결정·캠페인 최적화를 수행하는 마케팅 방식(Data-Driven Marketing). 예:
+  GA4 데이터로 유입 채널별 예산 재배분."
+aliases:
+  - Data-Driven Marketing
+categoryId: glossary-analytics
+sourceIds: [ga4-events-devguide, datareportal-digital-2026-korea]
+relatedIds: [kpi, segment, ab-testing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

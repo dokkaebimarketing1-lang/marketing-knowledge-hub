@@ -1,0 +1,13 @@
+term: "리마케팅"
+definition: "기존 고객·접촉 고객을 대상으로 이메일, 광고 등 다양한 채널을 통해 재참여를 유도하는 전략. 리타겟팅이 개인화 광고에
+  초점을 둔다면 리마케팅은 더 넓은 채널을 포괄한다. 예: 이탈 고객에게 할인 쿠폰 이메일 발송."
+aliases:
+  - Remarketing
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, google-ads-quality-score]
+relatedIds: [retargeting, retention-marketing, audience]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

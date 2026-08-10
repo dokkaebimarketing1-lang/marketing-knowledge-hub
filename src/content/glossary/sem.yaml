@@ -1,0 +1,14 @@
+term: "SEM"
+definition: "검색 엔진을 활용한 유료·자연 검색 마케팅의 총칭. 실무에서는 주로 유료 검색 광고(PPC)를 의미하기도 한다. 예:
+  SEO와 구글 광고를 함께 운영해 검색 채널 매출 확대."
+aliases:
+  - 검색 엔진 마케팅
+  - Search Engine Marketing
+categoryId: glossary-search-ai
+sourceIds: [google-ads-optimization-guide, naver-ads-quality-score-notice]
+relatedIds: [seo, ppc, keyword]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

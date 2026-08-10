@@ -1,0 +1,13 @@
+term: "콘텐츠 마케팅"
+definition: "유용한 정보·재미를 제공하는 콘텐츠로 잠재 고객의 관심과 신뢰를 얻고, 궁극적으로 구매를 유도하는 마케팅 전략. 예:
+  자사 블로그에 업계 인사이트 글을 꾸준히 발행해 자연 유입 확보."
+aliases:
+  - Content Marketing
+categoryId: glossary-social-content
+sourceIds: [hubspot-social-media-marketing-report, kakao-moment-guide]
+relatedIds: [inbound-marketing, seo, ugc]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

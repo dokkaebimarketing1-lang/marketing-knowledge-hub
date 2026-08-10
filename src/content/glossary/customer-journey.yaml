@@ -1,0 +1,13 @@
+term: "고객 여정"
+definition: "고객이 브랜드 인지부터 구매·사후 경험까지 거치는 전체 과정(Customer Journey). 퍼널·터치포인트 분석의
+  기반이다. 예: 인지 → 검색 → 비교 → 구매 → 리뷰 작성."
+aliases:
+  - Customer Journey
+categoryId: glossary-strategy
+sourceIds: [hubspot-social-media-marketing-report]
+relatedIds: [marketing-funnel, aida, omnichannel]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,15 @@
+term: "CTA"
+definition: "사용자의 다음 행동(구매, 가입, 다운로드 등)을 유도하는 문구·버튼(Call To Action). 예: \"지금
+  구매하기\", \"무료로 시작하기\" 버튼."
+aliases:
+  - 클릭 유도 문구
+  - 클릭 유도 버튼
+  - Call To Action
+categoryId: glossary-strategy
+sourceIds: [hubspot-social-media-marketing-report, stibee-email-marketing-data]
+relatedIds: [landing-page, conversion, cro]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

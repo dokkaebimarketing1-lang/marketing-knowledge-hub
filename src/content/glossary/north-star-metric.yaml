@@ -1,0 +1,14 @@
+term: "북극성 지표"
+definition: "제품·서비스 성장의 최종 목표가 되는 단일 지표(North Star Metric, NSM). 모든 팀의 노력을 한곳으로
+  모으는 역할을 한다. 예: 음악 앱의 \"주간 청취 시간\", SNS의 \"주간 활성 사용자\"."
+aliases:
+  - NSM
+  - North Star Metric
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc]
+relatedIds: [okr, kpi, retention]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

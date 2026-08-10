@@ -1,0 +1,13 @@
+term: "쿠키리스"
+definition: "브라우저·앱이 사용자 추적 쿠키를 제한하거나 금지하는 환경. 마케터는 퍼스트파티 데이터, 전환 API, 머신러닝 모델링
+  등으로 대응한다. 예: 애플 ITP·구글 서드파티 쿠키 단계적 폐지에 대응한 측정 전략 수립."
+aliases:
+  - Cookieless
+categoryId: glossary-ad-performance
+sourceIds: [google-ads-optimization-guide, ga4-session-doc]
+relatedIds: [cookie, third-party-cookie, first-party-data]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

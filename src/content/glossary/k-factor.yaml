@@ -1,0 +1,13 @@
+term: "바이럴 계수"
+definition: "한 사용자가 몇 명의 신규 사용자를 데려오는지를 나타내는 성장 지표(K-Factor). 1 이상이면 자연 성장이
+  가능하다. 예: 사용자 1명이 평균 0.8명을 초대 → K-factor 0.8(유료 유입 필요)."
+aliases:
+  - K-Factor
+categoryId: glossary-strategy
+sourceIds: [hubspot-social-media-marketing-report]
+relatedIds: [viral-marketing, growth-hacking, ua]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

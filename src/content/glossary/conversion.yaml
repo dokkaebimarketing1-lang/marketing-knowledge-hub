@@ -1,0 +1,15 @@
+term: "전환"
+definition: "사이트에서 사용자가 완료한 비즈니스 목표 행동(구매, 가입, 문의 등). GA4에서는 주요 이벤트(Key event)로
+  관리된다. 예: 회원가입 완료, 상품 구매, 뉴스레터 구독."
+aliases:
+  - Conversion
+  - 주요 이벤트
+  - Key Event
+categoryId: glossary-analytics
+sourceIds: [ga4-key-events-doc, ga4-events-devguide]
+relatedIds: [cvr, funnel, cta]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

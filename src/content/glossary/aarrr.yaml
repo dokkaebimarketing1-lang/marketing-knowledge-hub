@@ -1,0 +1,14 @@
+term: "AARRR"
+definition: "Acquisition(획득)·Activation(활성화)·Retention(유지)·Referral(추천)·Revenue\
+  (매출) 5단계로 고객 여정을 분석하는 그로스해킹 프레임워크(해적 지표). 예: 각 단계별 전환율을 측정해 병목 단계 발견."
+aliases:
+  - 해적 지표
+  - Pirate Metrics
+categoryId: glossary-analytics
+sourceIds: [datareportal-digital-2026-korea, ga4-key-events-doc]
+relatedIds: [growth-hacking, funnel, retention]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

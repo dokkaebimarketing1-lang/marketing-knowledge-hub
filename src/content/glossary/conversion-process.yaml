@@ -1,0 +1,14 @@
+term: "컨버전"
+definition: "사용자가 목표 행동을 완료하는 것(Conversion). 회원가입, 구매, 앱 설치, 문의 제출 등 비즈니스 목적에 따라
+  정의된다. 예: 이벤트 페이지 방문자가 상품을 구매하면 컨버전 발생."
+aliases:
+  - Conversion
+  - 전환
+categoryId: glossary-strategy
+sourceIds: [stibee-email-marketing-data, hubspot-social-media-marketing-report]
+relatedIds: [conversion, cta, funnel]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

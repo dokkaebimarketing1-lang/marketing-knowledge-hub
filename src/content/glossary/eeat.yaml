@@ -1,0 +1,14 @@
+term: "E-E-A-T"
+definition: "구글 품질 평가 가이드라인에서 콘텐츠 품질을 판단하는 기준으로, 경험·전문성·권위·신뢰성(Experience,
+  Expertise, Authoritativeness, Trustworthiness)을 의미한다. 재무·건강 등 YMYL(Your Money
+  or Your Life) 영역에서 특히 중요하다. 예: 건강 정보 글에 의료 전문가의 서명·출처를 명시해 신뢰성을 높임."
+aliases:
+  - 경험·전문성·권위·신뢰성
+categoryId: glossary-search-ai
+sourceIds: [google-ai-optimization-guide, google-ai-features-doc]
+relatedIds: [seo, content-marketing]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []
