@@ -1,0 +1,6 @@
+{
+  "clusters": [
+    { "id": "seo-foundations", "categoryId": "search", "leafSlugs": ["search/seo-basic"] },
+    { "id": "paid-search", "categoryId": "search", "leafSlugs": ["search/keyword-ads"] }
+  ]
+}

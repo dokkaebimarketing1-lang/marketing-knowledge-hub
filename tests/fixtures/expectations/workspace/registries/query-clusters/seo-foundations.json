@@ -1,0 +1,11 @@
+{
+  "id": "seo-foundations",
+  "categoryId": "search",
+  "title": "SEO 기초",
+  "description": "SEO 기초 클러스터",
+  "order": 1,
+  "hubPath": "/search/clusters/seo-foundations/",
+  "primaryEntityId": "seo",
+  "leafSlugs": ["search/seo-basic", "search/draft-note", "search/deprecated-guide"],
+  "status": "active"
+}

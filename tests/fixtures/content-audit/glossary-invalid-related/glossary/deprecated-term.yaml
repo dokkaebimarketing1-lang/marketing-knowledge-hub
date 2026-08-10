@@ -1,0 +1,11 @@
+term: "DeprecatedTerm"
+definition: "참조 대상이 되면 안 되는 deprecated 용어."
+aliases: []
+categoryId: glossary-search-ai
+sourceIds: [src-seo-guide]
+relatedIds: []
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: deprecated
+redirectFrom: []

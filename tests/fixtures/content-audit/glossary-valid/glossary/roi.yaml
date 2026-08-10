@@ -1,0 +1,11 @@
+term: "ROI"
+definition: "투자 대비 수익의 비율(Return On Investment). ROAS보다 넓은 범위의 투자 효율 지표다."
+aliases: []
+categoryId: glossary-ad-performance
+sourceIds: [src-roi-guide]
+relatedIds: [roas]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,6 @@
+{
+  "id": "ai-search-optimization",
+  "categoryId": "ai-search",
+  "entityId": "geo",
+  "leafSlugs": ["ai-search/geo-basic"]
+}

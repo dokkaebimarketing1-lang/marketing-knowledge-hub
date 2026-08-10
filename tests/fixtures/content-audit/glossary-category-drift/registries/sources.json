@@ -1,0 +1,6 @@
+{
+  "sources": [
+    { "id": "src-seo-guide", "url": "https://example.com/seo-guide", "status": "active" },
+    { "id": "src-ga4-guide", "url": "https://example.com/ga4-guide", "status": "active" }
+  ]
+}

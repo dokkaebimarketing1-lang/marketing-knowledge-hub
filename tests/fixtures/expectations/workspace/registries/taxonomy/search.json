@@ -1,0 +1,9 @@
+{
+  "id": "search",
+  "label": "검색 마케팅",
+  "kind": "knowledge",
+  "description": "검색 채널 마케팅",
+  "order": 1,
+  "hubPath": "/search/",
+  "status": "active"
+}

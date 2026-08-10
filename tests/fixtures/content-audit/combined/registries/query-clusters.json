@@ -1,0 +1,5 @@
+{
+  "query-clusters": [
+    { "id": "seo-foundations", "categoryId": "search", "leafSlugs": ["search/seo-basic"] }
+  ]
+}

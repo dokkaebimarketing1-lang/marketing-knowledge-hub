@@ -1,0 +1,7 @@
+{
+  "id": "ai-search",
+  "name": "AI Search",
+  "kind": "knowledge",
+  "order": 2,
+  "hubPath": "/ai-search/"
+}

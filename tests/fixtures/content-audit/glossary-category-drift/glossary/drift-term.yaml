@@ -1,0 +1,11 @@
+term: "DriftTerm"
+definition: "knowledge kind taxonomy를 categoryId로 참조하는 용어."
+aliases: []
+categoryId: search
+sourceIds: [src-seo-guide]
+relatedIds: []
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

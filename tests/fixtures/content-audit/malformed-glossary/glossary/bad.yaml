@@ -1,0 +1,6 @@
+term: "broken term
+definition: "닫히지 않은 따옴표로 YAML 파싱이 실패한다.
+categoryId: glossary-search-ai
+sourceIds: [src-x]
+relatedIds: []
+status: active

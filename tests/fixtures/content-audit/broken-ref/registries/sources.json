@@ -1,0 +1,6 @@
+{
+  "sources": [
+    { "id": "src-ig-guide", "url": "https://example.com/ig-guide" },
+    { "id": "src-yt-guide", "url": "https://example.com/yt-guide" }
+  ]
+}

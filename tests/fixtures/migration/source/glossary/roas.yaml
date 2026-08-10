@@ -1,0 +1,7 @@
+term: "ROAS"
+definition: "광고비 대비 발생한 매출의 비율(Return On Ad Spend). ROAS = (광고로 인한 매출 ÷ 광고비) × 100."
+aliases:
+  - 광고 투자 수익률
+  - Return On Ad Spend
+category: 성과 분석
+related: [roi]

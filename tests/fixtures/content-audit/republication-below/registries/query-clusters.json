@@ -1,0 +1,5 @@
+{
+  "clusters": [
+    { "id": "seo-foundations", "categoryId": "search", "leafSlugs": ["search/below"] }
+  ]
+}

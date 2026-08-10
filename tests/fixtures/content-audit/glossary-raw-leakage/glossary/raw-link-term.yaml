@@ -1,0 +1,12 @@
+term: "RawLinkTerm"
+definition: "본문에 raw 링크가 포함된 용어. 자세한 내용은 [probe](/raw/probe.html)을 참고하세요."
+aliases:
+  - 일반 별칭
+categoryId: glossary-search-ai
+sourceIds: [src-seo-guide]
+relatedIds: []
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

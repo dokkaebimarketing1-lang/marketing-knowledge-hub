@@ -1,0 +1,4 @@
+{
+  "sources": [
+    { "id": "src-x", "url": "https://example.com/x", "status": "active" },
+    "id": "broken",

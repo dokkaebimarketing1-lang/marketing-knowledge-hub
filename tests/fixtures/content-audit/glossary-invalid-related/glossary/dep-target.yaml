@@ -1,0 +1,11 @@
+term: "DepTarget"
+definition: "deprecated 상태인 용어를 relatedIds로 참조한다."
+aliases: []
+categoryId: glossary-search-ai
+sourceIds: [src-seo-guide]
+relatedIds: [deprecated-term]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

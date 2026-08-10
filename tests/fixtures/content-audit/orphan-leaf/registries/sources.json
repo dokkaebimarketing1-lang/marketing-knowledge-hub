@@ -1,0 +1,6 @@
+{
+  "sources": [
+    { "id": "src-roas-guide", "url": "https://example.com/roas-guide" },
+    { "id": "src-ret-guide", "url": "https://example.com/ret-guide" }
+  ]
+}

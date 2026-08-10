@@ -1,0 +1,5 @@
+{
+  "clusters": [
+    { "id": "performance-metrics", "categoryId": "performance", "leafSlugs": ["performance/retention"] }
+  ]
+}

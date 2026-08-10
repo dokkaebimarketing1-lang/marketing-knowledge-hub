@@ -1,0 +1,12 @@
+term: "AEO"
+definition: "생성형 검색 엔진이 콘텐츠를 '직접 답변'으로 채택하도록 최적화하는 기법."
+aliases:
+  - 답변 엔진 최적화
+categoryId: glossary-search-ai
+sourceIds: []
+relatedIds: []
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

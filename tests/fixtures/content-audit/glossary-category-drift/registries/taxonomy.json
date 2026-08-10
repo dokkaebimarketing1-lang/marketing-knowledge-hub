@@ -1,0 +1,16 @@
+{
+  "taxonomy": [
+    {
+      "id": "search",
+      "label": "검색",
+      "kind": "knowledge",
+      "status": "active"
+    },
+    {
+      "id": "glossary-analytics",
+      "label": "분석",
+      "kind": "glossary",
+      "status": "deprecated"
+    }
+  ]
+}

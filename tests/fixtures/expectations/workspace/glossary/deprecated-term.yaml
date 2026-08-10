@@ -1,0 +1,13 @@
+term: "폐기 용어"
+definition: "더 이상 사용하지 않는 용어."
+aliases: []
+categoryId: glossary-search
+sourceIds:
+  - seo-guide
+relatedIds: []
+updatedAt: 2026-08-08
+reviewedAt: null
+reviewStatus: human-review-needed
+status: deprecated
+redirectFrom:
+  - /glossary/legacy-term/

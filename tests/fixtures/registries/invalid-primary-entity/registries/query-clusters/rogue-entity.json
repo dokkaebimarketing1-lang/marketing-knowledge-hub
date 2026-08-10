@@ -1,0 +1,6 @@
+{
+  "id": "rogue-entity",
+  "categoryId": "search",
+  "primaryEntityId": "nonexistent-entity",
+  "leafSlugs": ["search/seo-basic"]
+}

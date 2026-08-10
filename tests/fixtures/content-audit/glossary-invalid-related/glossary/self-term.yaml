@@ -1,0 +1,11 @@
+term: "SelfTerm"
+definition: "자기 자신을 relatedIds로 참조한다."
+aliases: []
+categoryId: glossary-search-ai
+sourceIds: [src-seo-guide]
+relatedIds: [self-term]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

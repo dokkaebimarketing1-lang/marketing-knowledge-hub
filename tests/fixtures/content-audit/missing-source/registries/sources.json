@@ -1,0 +1,5 @@
+{
+  "sources": [
+    { "id": "src-real-source", "url": "https://example.com/real-source" }
+  ]
+}

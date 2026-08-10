@@ -1,0 +1,7 @@
+{
+  "id": "search",
+  "name": "Search",
+  "kind": "knowledge",
+  "order": 1,
+  "hubPath": "/search/"
+}

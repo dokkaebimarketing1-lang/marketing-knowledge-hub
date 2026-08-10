@@ -1,0 +1,14 @@
+term: "초안 용어"
+definition: "아직 공개하지 않은 용어."
+aliases: []
+categoryId: glossary-search
+sourceIds:
+  - seo-guide
+relatedIds: []
+updatedAt: 2026-08-08
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+draft: true
+redirectFrom:
+  - /glossary/draft-term-old/

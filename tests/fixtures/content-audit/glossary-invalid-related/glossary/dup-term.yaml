@@ -1,0 +1,11 @@
+term: "DupTerm"
+definition: "같은 용어를 두 번 relatedIds로 참조한다."
+aliases: []
+categoryId: glossary-search-ai
+sourceIds: [src-seo-guide]
+relatedIds: [other-term, other-term]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []

@@ -1,0 +1,31 @@
+{
+  "docs/ai-search/index.mdx": {
+    "contentKind": "categoryHub",
+    "categoryId": "ai-search",
+    "primaryQuery": "AI 검색 마케팅 전략",
+    "searchIntent": "informational",
+    "primaryQuestion": "AI 검색 시대의 마케팅 전략은 무엇인가?",
+    "shortAnswer": "생성형 AI 검색 환경에서 브랜드 가시성을 높이는 GEO·AEO 전략 전반",
+    "primaryEntityId": "ai-search",
+    "updatedAt": "2026-08-07",
+    "reviewStatus": "auto-mapped",
+    "status": "active",
+    "sourceIds": [],
+    "relatedIds": []
+  },
+  "docs/ai-search/geo-basic.mdx": {
+    "contentKind": "article",
+    "categoryId": "ai-search",
+    "queryClusterId": "ai-search-optimization",
+    "primaryQuery": "GEO 최적화란",
+    "searchIntent": "informational",
+    "primaryQuestion": "GEO(생성 엔진 최적화)란 무엇인가?",
+    "shortAnswer": "생성형 AI 엔진 답변에서 브랜드가 인용되도록 최적화하는 전략",
+    "primaryEntityId": "geo",
+    "updatedAt": "2026-08-07",
+    "reviewStatus": "auto-mapped",
+    "status": "active",
+    "sourceIds": ["source-aggarwal-2023"],
+    "relatedIds": ["aeo-basic"]
+  }
+}

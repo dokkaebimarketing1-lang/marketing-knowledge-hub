@@ -1,0 +1,6 @@
+{
+  "sources": [
+    { "id": "src-ads-guide", "url": "https://example.com/ads-guide", "status": "active" },
+    { "id": "src-roi-guide", "url": "https://example.com/roi-guide", "status": "active" }
+  ]
+}

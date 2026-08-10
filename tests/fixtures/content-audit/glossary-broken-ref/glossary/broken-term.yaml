@@ -1,0 +1,11 @@
+term: "BrokenTerm"
+definition: "존재하지 않는 glossary 용어를 relatedIds로 참조한다."
+aliases: []
+categoryId: glossary-search-ai
+sourceIds: [src-seo-guide]
+relatedIds: [ghost-term]
+updatedAt: "2026-08-08"
+reviewedAt: null
+reviewStatus: human-review-needed
+status: active
+redirectFrom: []
