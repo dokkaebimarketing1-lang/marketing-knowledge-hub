@@ -1,0 +1,2078 @@
+{
+  "glossary/aarrr.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "datareportal-digital-2026-korea",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "growth-hacking",
+      "funnel",
+      "retention"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/ab-testing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc",
+      "ga4-engagement-rate-doc"
+    ],
+    "relatedIds": [
+      "cro",
+      "cvr",
+      "data-driven-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/active-user.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-session-doc",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "user",
+      "new-returning-user",
+      "session"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/aeo.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "google-ai-optimization-guide",
+      "google-ai-features-doc"
+    ],
+    "relatedIds": [
+      "geo",
+      "seo",
+      "serp"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/affiliate-marketing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "kakao-moment-guide",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "cps",
+      "influencer",
+      "performance-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/aida.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "marketing-funnel",
+      "customer-journey",
+      "cta"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/aov.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "ltv",
+      "arpu",
+      "conversion"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/arppu.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "arpu",
+      "ltv",
+      "aov"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/arpu.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "arppu",
+      "aov",
+      "mrr"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/audience.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "segment",
+      "retargeting",
+      "targeting"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/backlink.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "naver-search-advisor-seo-guide",
+      "google-ai-features-doc"
+    ],
+    "relatedIds": [
+      "seo",
+      "organic-traffic"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/bounce-rate.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-engagement-rate-doc",
+      "ga4-session-doc"
+    ],
+    "relatedIds": [
+      "engagement-rate",
+      "session",
+      "landing-page"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/brand-equity.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "positioning",
+      "muse",
+      "value-proposition"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cac.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "ltv",
+      "ltv-cac-ratio",
+      "cpa"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cohort.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-session-doc",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "retention",
+      "segment",
+      "north-star-metric"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cold-start.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "kakao-moment-guide",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "growth-hacking",
+      "ua",
+      "retention"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/content-marketing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "inbound-marketing",
+      "seo",
+      "ugc"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/conversion-process.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "stibee-email-marketing-data",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "conversion",
+      "cta",
+      "funnel"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/conversion.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc",
+      "ga4-events-devguide"
+    ],
+    "relatedIds": [
+      "cvr",
+      "funnel",
+      "cta"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cookie.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "ga4-events-devguide",
+      "google-ads-optimization-guide"
+    ],
+    "relatedIds": [
+      "first-party-cookie",
+      "third-party-cookie",
+      "cookieless",
+      "pixel"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cookieless.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "ga4-session-doc"
+    ],
+    "relatedIds": [
+      "cookie",
+      "third-party-cookie",
+      "first-party-data"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cpa.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "cvr",
+      "cac",
+      "performance-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cpc.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-quality-score",
+      "google-ads-optimization-guide"
+    ],
+    "relatedIds": [
+      "ppc",
+      "ctr",
+      "cpm"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cpi.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "meta-instagram-stories-ads"
+    ],
+    "relatedIds": [
+      "ua",
+      "cpa",
+      "pixel"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cpm.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "impression",
+      "ecpm",
+      "cpc"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cps.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "affiliate-marketing",
+      "cpa",
+      "roi"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/crm.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "stibee-email-marketing-data",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "customer-segmentation",
+      "retention-marketing",
+      "omnichannel"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cro.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc",
+      "ga4-engagement-rate-doc"
+    ],
+    "relatedIds": [
+      "ab-testing",
+      "cvr",
+      "landing-page"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cta.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report",
+      "stibee-email-marketing-data"
+    ],
+    "relatedIds": [
+      "landing-page",
+      "conversion",
+      "cro"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/ctr.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-quality-score",
+      "google-ads-optimization-guide"
+    ],
+    "relatedIds": [
+      "impression",
+      "cpc",
+      "cvr"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/customer-journey.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "marketing-funnel",
+      "aida",
+      "omnichannel"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/customer-segmentation.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "stibee-email-marketing-data",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "targeting",
+      "icp",
+      "crm"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/cvr.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "conversion",
+      "cpa",
+      "cro"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/data-driven-marketing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-events-devguide",
+      "datareportal-digital-2026-korea"
+    ],
+    "relatedIds": [
+      "kpi",
+      "segment",
+      "ab-testing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/ecpm.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "cpm",
+      "cpc",
+      "impression"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/eeat.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "google-ai-optimization-guide",
+      "google-ai-features-doc"
+    ],
+    "relatedIds": [
+      "seo",
+      "content-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/engagement-rate-sns.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "datareportal-digital-2026-korea",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "reach",
+      "nano-micro-influencer",
+      "content-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/engagement-rate.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-engagement-rate-doc",
+      "ga4-session-doc"
+    ],
+    "relatedIds": [
+      "bounce-rate",
+      "session",
+      "conversion"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/first-party-cookie.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "ga4-events-devguide",
+      "google-ads-optimization-guide"
+    ],
+    "relatedIds": [
+      "cookie",
+      "third-party-cookie",
+      "first-party-data"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/first-party-data.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "kakao-moment-guide",
+      "stibee-email-marketing-data"
+    ],
+    "relatedIds": [
+      "cookie",
+      "cookieless",
+      "opt-in-opt-out"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/funnel.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc",
+      "ga4-events-devguide"
+    ],
+    "relatedIds": [
+      "conversion",
+      "marketing-funnel",
+      "segment"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/geo.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "geo-princeton-paper",
+      "google-ai-optimization-guide"
+    ],
+    "relatedIds": [
+      "aeo",
+      "llmo",
+      "seo"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/growth-hacking.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "datareportal-digital-2026-korea",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "aarrr",
+      "ab-testing",
+      "data-driven-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/hashtag.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report",
+      "datareportal-digital-2026-korea"
+    ],
+    "relatedIds": [
+      "reach",
+      "social-listening",
+      "content-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/icp.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "customer-segmentation",
+      "targeting",
+      "value-proposition"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/impression.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "reach",
+      "ctr",
+      "cpm"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/inbound-marketing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "content-marketing",
+      "seo",
+      "cta"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/influencer.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report",
+      "youtube-partner-program-policy"
+    ],
+    "relatedIds": [
+      "nano-micro-influencer",
+      "ugc",
+      "affiliate-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/k-factor.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "viral-marketing",
+      "growth-hacking",
+      "ua"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/keyword.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "naver-search-advisor-seo-guide",
+      "google-ai-features-doc"
+    ],
+    "relatedIds": [
+      "search-intent",
+      "seo",
+      "ppc"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/kpi.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "okr",
+      "roi",
+      "cvr"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/landing-page.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "stibee-email-marketing-data",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "cta",
+      "cro",
+      "search-intent"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/llmo.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "google-ai-optimization-guide",
+      "google-ai-features-doc"
+    ],
+    "relatedIds": [
+      "geo",
+      "aeo"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/ltv-cac-ratio.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "ltv",
+      "cac",
+      "roi"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/ltv.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "cac",
+      "ltv-cac-ratio",
+      "arpu"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/marketing-funnel.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report",
+      "stibee-email-marketing-data"
+    ],
+    "relatedIds": [
+      "funnel",
+      "customer-journey",
+      "aida"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/mau-dau-wau.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-session-doc"
+    ],
+    "relatedIds": [
+      "active-user",
+      "retention",
+      "north-star-metric"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/mer.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "roas",
+      "roi",
+      "performance-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/mrr.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "arpu",
+      "retention",
+      "north-star-metric"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/multichannel.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "kakao-moment-guide",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "omnichannel",
+      "crm"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/muse.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "influencer",
+      "brand-equity"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/nano-micro-influencer.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report",
+      "datareportal-digital-2026-korea"
+    ],
+    "relatedIds": [
+      "influencer",
+      "engagement-rate-sns"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/new-returning-user.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-session-doc",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "user",
+      "active-user",
+      "retention"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/north-star-metric.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "okr",
+      "kpi",
+      "retention"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/nps.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "retention",
+      "customer-segmentation",
+      "crm"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/nudge.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "stibee-email-marketing-data",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "landing-page",
+      "cro",
+      "cta"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/okr.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "kpi",
+      "north-star-metric",
+      "data-driven-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/omnichannel.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "kakao-moment-guide",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "multichannel",
+      "customer-journey",
+      "crm"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/opt-in-opt-out.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "stibee-email-marketing-data"
+    ],
+    "relatedIds": [
+      "first-party-data",
+      "cookie",
+      "crm"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/organic-traffic.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "naver-search-advisor-seo-guide",
+      "google-ai-features-doc"
+    ],
+    "relatedIds": [
+      "seo",
+      "serp",
+      "conversion"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/pageview.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-events-devguide",
+      "ga4-session-doc"
+    ],
+    "relatedIds": [
+      "session",
+      "engagement-rate",
+      "user"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/performance-marketing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "cpa",
+      "roas",
+      "kpi"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/pixel.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "meta-instagram-stories-ads"
+    ],
+    "relatedIds": [
+      "retargeting",
+      "cookie",
+      "conversion"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/positioning.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "value-proposition",
+      "brand-equity",
+      "customer-segmentation"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/ppc.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "google-ads-quality-score",
+      "naver-ads-quality-score-notice"
+    ],
+    "relatedIds": [
+      "sem",
+      "cpc",
+      "keyword"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/reach.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "datareportal-digital-2026-korea",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "impression",
+      "engagement-rate-sns",
+      "reels"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/reels.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "meta-instagram-stories-ads",
+      "datareportal-digital-2026-korea"
+    ],
+    "relatedIds": [
+      "short-form",
+      "reach",
+      "engagement-rate-sns"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/remarketing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "google-ads-quality-score"
+    ],
+    "relatedIds": [
+      "retargeting",
+      "retention-marketing",
+      "audience"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/retargeting.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "google-ads-quality-score"
+    ],
+    "relatedIds": [
+      "remarketing",
+      "pixel",
+      "audience"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/retention-marketing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "stibee-email-marketing-data",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "retention",
+      "remarketing",
+      "crm"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/retention.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-session-doc",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "cohort",
+      "retention-marketing",
+      "mau-dau-wau"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/roas.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "roi",
+      "mer",
+      "performance-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/roi.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "roas",
+      "cps",
+      "mer"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/rtb.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "impression",
+      "cpm",
+      "audience"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/search-intent.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "google-ai-features-doc",
+      "naver-search-advisor-seo-guide"
+    ],
+    "relatedIds": [
+      "keyword",
+      "seo",
+      "landing-page"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/segment.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-events-devguide",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "audience",
+      "cohort",
+      "funnel"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/sem.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "naver-ads-quality-score-notice"
+    ],
+    "relatedIds": [
+      "seo",
+      "ppc",
+      "keyword"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/seo.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "google-ai-features-doc",
+      "google-ai-optimization-guide",
+      "naver-search-advisor-seo-guide"
+    ],
+    "relatedIds": [
+      "geo",
+      "sem",
+      "keyword",
+      "backlink",
+      "organic-traffic"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/serp.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-search-ai",
+    "sourceIds": [
+      "google-ai-features-doc",
+      "naver-search-advisor-seo-guide"
+    ],
+    "relatedIds": [
+      "seo",
+      "organic-traffic",
+      "ppc"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/session.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-session-doc"
+    ],
+    "relatedIds": [
+      "user",
+      "engagement-rate",
+      "bounce-rate"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/short-form.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "youtube-partner-program-policy",
+      "tiktok-newsroom-live-commerce"
+    ],
+    "relatedIds": [
+      "reels",
+      "viral-marketing",
+      "reach"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/social-listening.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report",
+      "datareportal-digital-2026-korea"
+    ],
+    "relatedIds": [
+      "hashtag",
+      "data-driven-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/story.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "meta-instagram-stories-ads",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "reach",
+      "engagement-rate-sns",
+      "content-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/targeting.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "kakao-moment-guide",
+      "google-ads-optimization-guide"
+    ],
+    "relatedIds": [
+      "customer-segmentation",
+      "audience",
+      "icp"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/third-party-cookie.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-ad-performance",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "ga4-session-doc"
+    ],
+    "relatedIds": [
+      "cookie",
+      "first-party-cookie",
+      "cookieless"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/ua.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "google-ads-optimization-guide",
+      "kakao-moment-guide"
+    ],
+    "relatedIds": [
+      "cpi",
+      "cold-start",
+      "k-factor"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/ugc.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "tiktok-newsroom-live-commerce",
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "influencer",
+      "content-marketing",
+      "reach"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/user.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-analytics",
+    "sourceIds": [
+      "ga4-session-doc",
+      "ga4-key-events-doc"
+    ],
+    "relatedIds": [
+      "session",
+      "active-user",
+      "new-returning-user"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/value-proposition.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-strategy",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report"
+    ],
+    "relatedIds": [
+      "positioning",
+      "icp",
+      "landing-page"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  },
+  "glossary/viral-marketing.yaml": {
+    "removeFields": [
+      "category",
+      "related"
+    ],
+    "categoryId": "glossary-social-content",
+    "sourceIds": [
+      "hubspot-social-media-marketing-report",
+      "youtube-partner-program-policy"
+    ],
+    "relatedIds": [
+      "short-form",
+      "k-factor",
+      "content-marketing"
+    ],
+    "updatedAt": "2026-08-08",
+    "reviewedAt": null,
+    "reviewStatus": "human-review-needed",
+    "status": "active",
+    "redirectFrom": []
+  }
+}
