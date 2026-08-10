@@ -1,0 +1,425 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage
+	frontmatter={{
+		title: '키워드 조합기',
+		description:
+			'키워드 그룹 여러 개를 조합해 모든 카테시안 곱 조합을 생성합니다. 클립보드 복사와 CSV 다운로드를 지원합니다.',
+		// ── 게시 지식 계약(strict): 생성 도구는 utility 계약을 따른다 ──
+		contentKind: 'utility',
+		categoryId: 'search',
+		queryClusterId: null,
+		primaryQuery: '키워드 조합기',
+		searchIntent: 'transactional',
+		primaryQuestion: '키워드 조합은 어떻게 생성하나?',
+		shortAnswer:
+			'여러 키워드 그룹을 카테시안 곱으로 최대 1,000건 조합하고 클립보드 복사·CSV 다운로드를 지원하는 도구.',
+		primaryEntityId: 'seo',
+		authorId: null,
+		publishedAt: null,
+		updatedAt: '2026-08-08',
+		reviewedAt: null,
+		reviewStatus: 'human-review-needed',
+		sourceIds: ['naver-search-advisor-seo-guide'],
+		relatedIds: [],
+		status: 'active',
+		redirectFrom: [],
+	}}
+>
+	<p>
+		키워드 그룹을 추가해 각 그룹의 단어를 <strong>모든 조합(카테시안 곱)</strong>으로
+		엮어냅니다. 예: <code>SEO·콘텐츠</code> × <code>가이드·툴</code> →{' '}
+		<code>SEO 가이드</code>, <code>SEO 툴</code>, <code>콘텐츠 가이드</code>,{' '}
+		<code>콘텐츠 툴</code>. 조합은 최대 <strong>1,000건</strong>까지만 생성됩니다.
+	</p>
+
+	<div id="groups" class="groups"></div>
+
+	<div class="actions">
+		<button type="button" id="addGroupBtn" class="btn">+ 그룹 추가</button>
+		<button type="button" id="copyBtn" class="btn" disabled>클립보드 복사</button>
+		<button type="button" id="csvBtn" class="btn" disabled>CSV 다운로드</button>
+		<span id="countText" class="count" role="status"></span>
+	</div>
+
+	<div id="warning" class="warning" hidden>
+		⚠️ 조합이 너무 많습니다. 최대 1,000건까지만 표시됩니다.
+	</div>
+
+	<h2>조합 결과</h2>
+	<ul id="results" class="results" aria-live="polite"></ul>
+</StarlightPage>
+
+<style>
+	.groups {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin: 1.5rem 0;
+	}
+
+	:global(.group) {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		min-width: 0;
+		padding: 1rem 1.1rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.6rem;
+		background: var(--sl-color-gray-7);
+	}
+
+	:global(.group-head) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+	}
+
+	:global(.group-label) {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--sl-color-gray-3);
+	}
+
+	:global(.group input) {
+		min-width: 0;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0.55rem 0.7rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.4rem;
+		background: var(--sl-color-gray-6);
+		color: var(--sl-color-white);
+		font-size: 0.95rem;
+	}
+
+	:global(.group input:focus) {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 1px;
+		border-color: var(--sl-color-accent);
+	}
+
+	:global(.group-hint) {
+		font-size: 0.75rem;
+		color: var(--sl-color-gray-5);
+	}
+
+	:global(.remove-btn) {
+		min-height: 44px;
+		padding: 0.3rem 0.6rem;
+		border: 1px solid var(--sl-color-red);
+		border-radius: 0.4rem;
+		background: transparent;
+		color: var(--sl-color-red-high);
+		font-size: 0.8rem;
+		cursor: pointer;
+	}
+
+	:global(.remove-btn:hover) {
+		background: var(--sl-color-red);
+		color: var(--sl-color-white);
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.6rem;
+		margin: 1rem 0;
+	}
+
+	.btn {
+		min-height: 44px;
+		white-space: nowrap;
+		padding: 0.55rem 1rem;
+		border: 1px solid var(--sl-color-accent);
+		border-radius: 0.4rem;
+		background: var(--sl-color-accent);
+		color: var(--sl-color-black);
+		font-size: 0.9rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition:
+			opacity 0.15s ease,
+			transform 0.15s ease;
+	}
+
+	.btn:hover {
+		opacity: 0.88;
+		transform: translateY(-1px);
+	}
+
+	.btn:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	.btn.secondary {
+		background: transparent;
+		color: var(--sl-color-accent);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.btn {
+			transition: none;
+		}
+
+		.btn:hover {
+			transform: none;
+		}
+	}
+
+	.count {
+		font-size: 0.85rem;
+		color: var(--sl-color-gray-2); /* 소형 카운트 — 4.5:1 이상 */
+	}
+
+	.warning {
+		margin: 0.5rem 0 1rem;
+		padding: 0.8rem 1rem;
+		border: 1px solid var(--sl-color-orange);
+		border-radius: 0.5rem;
+		background: color-mix(in srgb, var(--sl-color-orange) 12%, transparent);
+		color: var(--sl-color-orange-high);
+		font-size: 0.9rem;
+	}
+
+	.results {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		gap: 0.5rem;
+		margin: 1rem 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	:global(.results li) {
+		min-width: 0;
+		padding: 0.45rem 0.7rem;
+		border: 1px solid var(--sl-color-gray-6);
+		border-radius: 0.4rem;
+		background: var(--sl-color-gray-7);
+		font-size: 0.9rem;
+		word-break: keep-all;
+		overflow-wrap: anywhere;
+	}
+
+	:global(.results .empty) {
+		grid-column: 1 / -1;
+		border: none;
+		background: transparent;
+		color: var(--sl-color-gray-5);
+		font-size: 0.9rem;
+	}
+</style>
+
+<script>
+	// ── 순수 계산 함수 ──────────────────────────────────────────────
+	const MAX_COMBINATIONS = 1000;
+
+	/** 콤마 또는 줄바꿈으로 구분된 문자열 → 키워드 배열 (빈 항목·중복 제거) */
+	function parseKeywords(raw: string): string[] {
+		return Array.from(
+			new Set(
+				raw
+					.split(/[,，\n\r]+/)
+					.map((s) => s.trim())
+					.filter(Boolean)
+			)
+		);
+	}
+
+	/** 조합 총 개수 = 각 그룹 키워드 수의 곱 (빈 그룹은 0) */
+	function countCombinations(groups: string[][]): number {
+		return groups.reduce((acc, g) => acc * g.length, 1);
+	}
+
+	/** 카테시안 곱 생성. 총 개수가 MAX를 넘으면 앞 MAX개만 반환 (지연 생성으로 폭발 방지) */
+	function combine(groups: string[][], limit: number): string[] {
+		if (groups.length === 0 || groups.some((g) => g.length === 0)) return [];
+		const result: string[] = [];
+		const build = (index: number, prefix: string) => {
+			if (result.length >= limit) return;
+			if (index === groups.length) {
+				result.push(prefix.trim());
+				return;
+			}
+			for (const kw of groups[index]) {
+				if (result.length >= limit) break;
+				build(index + 1, `${prefix}${prefix ? ' ' : ''}${kw}`);
+			}
+		};
+		build(0, '');
+		return result;
+	}
+
+	// ── DOM 바인딩 ──────────────────────────────────────────────────
+	const elGroups = document.getElementById('groups') as HTMLDivElement;
+	const elResults = document.getElementById('results') as HTMLUListElement;
+	const elCount = document.getElementById('countText') as HTMLSpanElement;
+	const elWarning = document.getElementById('warning') as HTMLDivElement;
+	const elCopy = document.getElementById('copyBtn') as HTMLButtonElement;
+	const elCsv = document.getElementById('csvBtn') as HTMLButtonElement;
+	const elAddGroup = document.getElementById('addGroupBtn') as HTMLButtonElement;
+
+	const groupValues: string[] = ['SEO, 콘텐츠', '가이드, 툴'];
+
+	function renderGroups(): void {
+		elGroups.textContent = '';
+		groupValues.forEach((value, index) => {
+			const groupNum = index + 1;
+			const wrapper = document.createElement('div');
+			wrapper.className = 'group';
+
+			const head = document.createElement('div');
+			head.className = 'group-head';
+
+			const label = document.createElement('label');
+			label.className = 'group-label';
+			label.htmlFor = `kw-group-${groupNum}-input`;
+			label.textContent = `그룹 ${groupNum}`;
+
+			const removeBtn = document.createElement('button');
+			removeBtn.type = 'button';
+			removeBtn.className = 'remove-btn';
+			removeBtn.textContent = '삭제';
+			removeBtn.setAttribute('aria-label', `그룹 ${groupNum} 삭제`);
+			removeBtn.addEventListener('click', () => {
+				groupValues.splice(index, 1);
+				renderGroups();
+				update();
+			});
+
+			head.append(label, removeBtn);
+			wrapper.append(head);
+
+			const input = document.createElement('input');
+			input.type = 'text';
+			input.id = `kw-group-${groupNum}-input`;
+			input.value = value;
+			input.placeholder = '키워드를 콤마(,)로 구분해 입력';
+			wrapper.append(input);
+
+			const hint = document.createElement('span');
+			hint.className = 'group-hint';
+			hint.setAttribute('aria-live', 'polite');
+			const updateHint = () => {
+				hint.textContent = `키워드 ${parseKeywords(input.value).length}개`;
+			};
+			input.addEventListener('input', () => {
+				groupValues[index] = input.value;
+				updateHint();
+				update();
+			});
+			updateHint();
+			wrapper.append(hint);
+
+			elGroups.append(wrapper);
+		});
+
+		elAddGroup.disabled = groupValues.length >= 6;
+	}
+
+	function update(): void {
+		const groups = groupValues.map(parseKeywords);
+		const total = countCombinations(groups);
+		const overLimit = total > MAX_COMBINATIONS;
+
+		const results = overLimit
+			? combine(groups, MAX_COMBINATIONS)
+			: combine(groups, total);
+
+		elResults.textContent = '';
+		if (results.length === 0) {
+			const li = document.createElement('li');
+			li.className = 'empty';
+			li.textContent = '아직 조합이 없습니다. 위 그룹에 키워드를 입력하세요.';
+			elResults.append(li);
+		} else {
+			for (const combo of results) {
+				const li = document.createElement('li');
+				li.textContent = combo;
+				elResults.append(li);
+			}
+		}
+
+		elCount.textContent =
+			results.length === 0
+				? ''
+				: overLimit
+					? `${new Intl.NumberFormat('ko-KR').format(total)}건 중 상위 ${new Intl.NumberFormat('ko-KR').format(MAX_COMBINATIONS)}건 표시`
+					: `총 ${new Intl.NumberFormat('ko-KR').format(results.length)}건`;
+
+		elWarning.hidden = !overLimit;
+		elCopy.disabled = results.length === 0;
+		elCsv.disabled = results.length === 0;
+	}
+
+	elAddGroup.addEventListener('click', () => {
+		if (groupValues.length < 6) {
+			groupValues.push('');
+			renderGroups();
+			update();
+		}
+	});
+
+	elCopy.addEventListener('click', async () => {
+		const combos = currentResults();
+		if (combos.length === 0) return;
+		const text = combos.join('\n');
+		try {
+			await navigator.clipboard.writeText(text);
+			flash(elCopy, '복사 완료!');
+		} catch {
+			// 클립보드 API 실패 시 폴백
+			const ta = document.createElement('textarea');
+			ta.value = text;
+			ta.style.position = 'fixed';
+			ta.style.opacity = '0';
+			document.body.append(ta);
+			ta.select();
+			const legacyDoc = document as unknown as { execCommand(command: string): boolean };
+			legacyDoc.execCommand('copy');
+			ta.remove();
+			flash(elCopy, '복사 완료!');
+		}
+	});
+
+	elCsv.addEventListener('click', () => {
+		const combos = currentResults();
+		if (combos.length === 0) return;
+		// BOM 포함 → Excel에서 한글 깨짐 방지
+		const csv = '\uFEFF' + combos.map((c) => `"${c.replace(/"/g, '""')}"`).join('\r\n');
+		const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+		const url = URL.createObjectURL(blob);
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = 'keyword-combinations.csv';
+		document.body.append(a);
+		a.click();
+		a.remove();
+		URL.revokeObjectURL(url);
+	});
+
+	function currentResults(): string[] {
+		const groups = groupValues.map(parseKeywords);
+		const total = countCombinations(groups);
+		if (total === 0) return [];
+		return total > MAX_COMBINATIONS ? combine(groups, MAX_COMBINATIONS) : combine(groups, total);
+	}
+
+	function flash(btn: HTMLButtonElement, text: string): void {
+		const original = btn.textContent;
+		btn.textContent = text;
+		window.setTimeout(() => {
+			btn.textContent = original;
+		}, 1200);
+	}
+
+	renderGroups();
+	update();
+</script>

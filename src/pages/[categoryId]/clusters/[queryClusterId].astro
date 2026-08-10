@@ -1,0 +1,434 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import { isVisibleDoc } from '../../../lib/content-visibility';
+
+interface ClusterRouteProps {
+	cluster: {
+		id: string;
+		title: string;
+		description: string;
+		primaryEntityId: string;
+	};
+	category: {
+		id: string;
+		label: string;
+		hubPath: string;
+	};
+	leaves: Array<{
+		id: string;
+		title: string;
+		description: string;
+		shortAnswer: string;
+	}>;
+	sourceIds: string[];
+	relatedIds: string[];
+	updatedAt: string;
+}
+
+export const getStaticPaths = (async () => {
+	const [taxonomy, queryClusters, docs] = await Promise.all([
+		getCollection('taxonomy'),
+		getCollection('queryClusters'),
+		getCollection('docs'),
+	]);
+
+	const activeCategories = taxonomy.filter(
+		(entry) => entry.data.kind === 'knowledge' && entry.data.status === 'active'
+	);
+	const categoryById = new Map(activeCategories.map((entry) => [entry.data.id, entry]));
+	const docById = new Map(docs.map((doc) => [doc.id, doc]));
+
+	const activeClusters = queryClusters.filter((entry) => entry.data.status === 'active');
+
+	for (const cluster of activeClusters) {
+		if (!categoryById.has(cluster.data.categoryId)) {
+			throw new Error(
+				`Query cluster "${cluster.data.id}" references missing or inactive knowledge category "${cluster.data.categoryId}".`
+			);
+		}
+	}
+
+	activeClusters.sort((a, b) => {
+		const categoryA = categoryById.get(a.data.categoryId);
+		const categoryB = categoryById.get(b.data.categoryId);
+		const categoryOrder = (categoryA?.data.order ?? 0) - (categoryB?.data.order ?? 0);
+
+		return (
+			categoryOrder ||
+			a.data.order - b.data.order ||
+			a.data.id.localeCompare(b.data.id, 'ko')
+		);
+	});
+
+	return activeClusters.map((cluster) => {
+		const category = categoryById.get(cluster.data.categoryId);
+		if (!category) {
+			throw new Error(`Validated category "${cluster.data.categoryId}" could not be resolved.`);
+		}
+
+		const description = cluster.data.description?.trim();
+		if (!description) {
+			throw new Error(`Active query cluster "${cluster.data.id}" requires a description.`);
+		}
+
+		const registeredLeaves = cluster.data.leafSlugs.map((leafId) => {
+			const leaf = docById.get(leafId);
+			if (!leaf) {
+				throw new Error(
+					`Query cluster "${cluster.data.id}" references missing leaf "${leafId}".`
+				);
+			}
+			if (
+				leaf.data.contentKind !== 'article' ||
+				leaf.data.categoryId !== cluster.data.categoryId ||
+				leaf.data.queryClusterId !== cluster.data.id
+			) {
+				throw new Error(
+					`Leaf "${leafId}" does not belong to query cluster "${cluster.data.id}" in category "${cluster.data.categoryId}".`
+				);
+			}
+			return leaf;
+		});
+
+		const visibleLeaves = registeredLeaves.filter((leaf) => isVisibleDoc(leaf.data));
+
+		// 보이는 리프가 하나도 없으면 클러스터 라우트 자체를 생성하지 않는다
+		// (Starlight 사이드바에도 노출되지 않도록 발행을 건너뛴다).
+		if (visibleLeaves.length === 0) {
+			return null;
+		}
+
+		const sourceIds = Array.from(
+			new Set(visibleLeaves.flatMap((leaf) => leaf.data.sourceIds))
+		);
+
+		if (sourceIds.length === 0) {
+			throw new Error(`Query cluster "${cluster.data.id}" requires at least one leaf source.`);
+		}
+
+		const updatedAt = visibleLeaves.reduce(
+			(latest, leaf) =>
+				leaf.data.updatedAt.getTime() > latest.getTime() ? leaf.data.updatedAt : latest,
+			visibleLeaves[0].data.updatedAt
+		);
+
+		return {
+			params: {
+				categoryId: category.data.id,
+				queryClusterId: cluster.data.id,
+			},
+			props: {
+				cluster: {
+					id: cluster.data.id,
+					title: cluster.data.title,
+					description,
+					primaryEntityId: cluster.data.primaryEntityId,
+				},
+				category: {
+					id: category.data.id,
+					label: category.data.label,
+					hubPath: category.data.hubPath,
+				},
+				leaves: visibleLeaves.map((leaf) => ({
+					id: leaf.id,
+					title: leaf.data.title,
+					description: leaf.data.description ?? leaf.data.shortAnswer,
+					shortAnswer: leaf.data.shortAnswer,
+				})),
+				sourceIds,
+				relatedIds: visibleLeaves.map((leaf) => leaf.id),
+				updatedAt: updatedAt.toISOString().slice(0, 10),
+			} satisfies ClusterRouteProps,
+		};
+	})
+	.filter((route) => route !== null); // 보이는 리프가 없는 클러스터는 라우트에서 제외
+}) satisfies GetStaticPaths;
+
+const { cluster, category, leaves, sourceIds, relatedIds, updatedAt }: ClusterRouteProps =
+	Astro.props;
+
+const articleCountLabel = `${leaves.length}개 글`;
+---
+
+<StarlightPage
+	frontmatter={{
+		title: cluster.title,
+		description: cluster.description,
+		contentKind: 'categoryHub',
+		categoryId: category.id,
+		queryClusterId: null,
+		primaryQuery: cluster.title,
+		searchIntent: 'informational',
+		primaryQuestion: `${cluster.title}에서는 무엇을 다루나?`,
+		shortAnswer: cluster.description,
+		primaryEntityId: cluster.primaryEntityId,
+		authorId: null,
+		publishedAt: null,
+		updatedAt,
+		reviewedAt: null,
+		reviewStatus: 'human-review-needed',
+		sourceIds,
+		relatedIds,
+		status: 'active',
+		redirectFrom: [],
+	}}
+>
+	<div class="cluster-hub">
+		<nav class="cluster-breadcrumb" aria-label="상위 경로">
+			<a href={category.hubPath}>← {category.label}</a>
+			<span aria-hidden="true">/</span>
+			<span aria-current="page">{cluster.title}</span>
+		</nav>
+
+		<div class="cluster-intro">
+			<p>{cluster.description}</p>
+			<span class="cluster-count" aria-label={`이 클러스터에 ${articleCountLabel}`}>
+				<strong>{leaves.length}</strong>개 글
+			</span>
+		</div>
+
+		<section class="cluster-articles" aria-labelledby="cluster-articles-title">
+			<div class="cluster-section-head">
+				<h2 id="cluster-articles-title">이 클러스터의 글</h2>
+				<p>{articleCountLabel}을 순서대로 살펴보세요.</p>
+			</div>
+
+			<ul class="cluster-list">
+				{
+					leaves.map((leaf, index) => (
+						<li>
+							<article>
+								<a class="cluster-card" href={`/${leaf.id}/`}>
+									<span class="cluster-card-index" aria-hidden="true">
+										{String(index + 1).padStart(2, '0')}
+									</span>
+									<h3>{leaf.title}</h3>
+									<p class="cluster-card-description">{leaf.description}</p>
+									<p class="cluster-card-answer">
+										<span>핵심 답변</span>
+										{leaf.shortAnswer}
+									</p>
+									<span class="cluster-card-link" aria-hidden="true">글 읽기 →</span>
+								</a>
+							</article>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</div>
+</StarlightPage>
+
+<style>
+	.cluster-hub {
+		word-break: keep-all;
+		overflow-wrap: break-word;
+	}
+
+	.cluster-breadcrumb {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0 0 1rem;
+		font-size: 0.85rem;
+		color: var(--sl-color-gray-3);
+	}
+
+	.cluster-breadcrumb a {
+		min-height: 2.75rem;
+		display: inline-flex;
+		align-items: center;
+		color: var(--sl-color-text-accent);
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.cluster-breadcrumb a:hover {
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.cluster-breadcrumb a:focus-visible,
+	.cluster-card:focus-visible {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 2px;
+	}
+
+	.cluster-intro {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+		margin-bottom: 2.5rem;
+		padding: 1.25rem 1.35rem;
+		border-left: 3px solid var(--sl-color-accent);
+		border-radius: 0 0.8rem 0.8rem 0;
+		background: var(--sl-color-bg-nav);
+	}
+
+	.cluster-intro p {
+		margin: 0;
+		max-width: 46rem;
+		color: var(--sl-color-gray-2);
+		line-height: 1.7;
+	}
+
+	.cluster-count {
+		flex: 0 0 auto;
+		padding: 0.3rem 0.7rem;
+		border-radius: 999px;
+		background: var(--sl-color-accent-low);
+		color: var(--sl-color-text-accent);
+		font-size: 0.8rem;
+		font-weight: 700;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.cluster-count strong {
+		font-weight: 800;
+	}
+
+	.cluster-section-head {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.35rem;
+		margin-bottom: 1rem;
+	}
+
+	.cluster-section-head h2,
+	.cluster-section-head p {
+		margin: 0;
+	}
+
+	.cluster-section-head h2 {
+		font-size: 1.25rem;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+	}
+
+	.cluster-section-head p {
+		font-size: 0.875rem;
+		color: var(--sl-color-gray-3);
+	}
+
+	.cluster-list {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.cluster-list > li,
+	.cluster-list article {
+		min-width: 0;
+		height: 100%;
+	}
+
+	.cluster-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.65rem;
+		height: 100%;
+		box-sizing: border-box;
+		padding: 1.25rem;
+		border: 1px solid var(--sl-color-hairline-light);
+		border-radius: 0.8rem;
+		background: var(--sl-color-bg-nav);
+		color: inherit;
+		text-decoration: none;
+		transition:
+			border-color 0.18s ease,
+			transform 0.18s ease;
+	}
+
+	.cluster-card:hover {
+		border-color: var(--sl-color-accent);
+		transform: translateY(-2px);
+	}
+
+	.cluster-card-index {
+		font-size: 0.75rem;
+		font-weight: 800;
+		letter-spacing: 0.1em;
+		color: var(--sl-color-text-accent);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.cluster-card h3 {
+		margin: 0;
+		font-size: 1.05rem;
+		font-weight: 800;
+		letter-spacing: -0.02em;
+		color: var(--sl-color-text);
+	}
+
+	.cluster-card-description,
+	.cluster-card-answer {
+		margin: 0;
+		font-size: 0.875rem;
+		line-height: 1.65;
+	}
+
+	.cluster-card-description {
+		color: var(--sl-color-gray-2);
+	}
+
+	.cluster-card-answer {
+		padding-top: 0.8rem;
+		border-top: 1px dashed var(--sl-color-hairline-light);
+		color: var(--sl-color-gray-2); /* 다크 카드 배경 대비 4.5:1 이상 */
+	}
+
+	.cluster-card-answer span {
+		display: block;
+		margin-bottom: 0.25rem;
+		font-size: 0.75rem;
+		font-weight: 800;
+		color: var(--sl-color-text-accent);
+	}
+
+	.cluster-card-link {
+		margin-top: auto;
+		padding-top: 0.2rem;
+		align-self: flex-end;
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: var(--sl-color-text-accent);
+		transition: transform 0.18s ease;
+	}
+
+	.cluster-card:hover .cluster-card-link {
+		transform: translateX(3px);
+	}
+
+	@media (min-width: 40em) {
+		.cluster-intro,
+		.cluster-section-head {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1.5rem;
+		}
+
+		.cluster-list {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.cluster-card,
+		.cluster-card-link {
+			transition: none;
+		}
+
+		.cluster-card:hover,
+		.cluster-card:hover .cluster-card-link {
+			transform: none;
+		}
+	}
+</style>

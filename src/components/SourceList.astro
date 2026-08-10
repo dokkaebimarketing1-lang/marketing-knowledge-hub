@@ -1,0 +1,160 @@
+---
+import { getContentIndex, type SourceEntry } from '../lib/content-index';
+
+/**
+ * 출처 인용 목록 컴포넌트.
+ * `sourceIds`(출처 레지스트리 ID 배열)를 공유 콘텐츠 인덱스의 active sources
+ * Map에서 해석해 순서를 유지하며 중복을 제거한 인용 목록을 렌더링한다.
+ *
+ * 계약:
+ *   - 빈 배열이면 아무것도 렌더링하지 않는다.
+ *   - 해석할 수 없는 ID(레지스트리 항목이 없거나 active 상태가 아닌 경우)는
+ *     개발/빌드에서 즉시 throw해 잘못된 출처 참조가 조용히 넘어가지 않게 한다.
+ *   - 각 항목은 제목(외부 링크)·발행처·URL·접속일을 표시한다.
+ */
+interface Props {
+	/** 출처 레지스트리 ID 목록 (예: ['geo-princeton-paper', 'ga4-session-doc']) */
+	sourceIds: string[];
+}
+
+const { sourceIds } = Astro.props;
+
+// ── 해석: 순서 유지 + 중복 제거 (공유 액티브 인덱스, 컬렉션 스캔 없음) ────────
+const uniqueIds = Array.from(new Set(sourceIds));
+const activeSources = await getContentIndex().getActiveSources();
+
+const unresolved: string[] = [];
+const resolved: SourceEntry[] = [];
+for (const id of uniqueIds) {
+	const entry = activeSources.get(id);
+	if (entry) {
+		resolved.push(entry);
+	} else {
+		unresolved.push(id);
+	}
+}
+
+if (unresolved.length > 0) {
+	throw new Error(
+		`SourceList: 다음 sourceIds를 해석할 수 없습니다: ${unresolved.join(', ')}. ` +
+			'src/content/registries/sources/에 active 상태의 레지스트리 항목이 있는지 확인하세요.'
+	);
+}
+
+const headingId = 'source-list-title';
+const formatDate = (date: Date) => date.toISOString().slice(0, 10);
+---
+
+{resolved.length > 0 && (
+	<section class="source-list-section" aria-labelledby={headingId}>
+		<h2 id={headingId} class="source-list-title">출처</h2>
+		<ol class="source-list">
+			{
+				resolved.map((entry) => (
+					<li class="source-item">
+						<a
+							class="source-link"
+							href={entry.data.url}
+							aria-label={`${entry.data.title} — 외부 사이트로 이동`}
+						>
+							{entry.data.title}
+							<span class="source-ext" aria-hidden="true">↗</span>
+						</a>
+						<p class="source-meta">
+							<span class="source-publisher">{entry.data.publisher}</span>
+							<span aria-hidden="true">·</span>
+							<span>접속일 {formatDate(entry.data.accessedAt)}</span>
+						</p>
+						<p class="source-url">{entry.data.url}</p>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+)}
+
+<style>
+	.source-list-section {
+		margin-top: 3rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--sl-color-hairline);
+		word-break: keep-all;
+		overflow-wrap: break-word;
+	}
+
+	.source-list-title {
+		margin: 0 0 0.85rem;
+		font-size: 0.875rem;
+		font-weight: 800;
+		letter-spacing: -0.01em;
+		color: var(--sl-color-gray-2); /* 다크/라이트 4.5:1 이상 확보 */
+	}
+
+	.source-list {
+		display: grid;
+		gap: 0.9rem;
+		margin: 0;
+		padding-left: 1.4rem;
+	}
+
+	.source-item {
+		min-width: 0;
+		line-height: 1.6;
+	}
+
+	.source-item::marker {
+		font-size: 0.8rem;
+		font-weight: 800;
+		font-variant-numeric: tabular-nums;
+		color: var(--sl-color-text-accent);
+	}
+
+	.source-link {
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.35em;
+		color: var(--sl-color-text-accent);
+		font-size: 0.9375rem;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.source-link:hover {
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	.source-link:focus-visible {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
+	.source-ext {
+		font-size: 0.8em;
+		opacity: 0.75;
+	}
+
+	.source-meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.4rem;
+		margin: 0.15rem 0 0;
+		font-size: 0.8rem;
+		color: var(--sl-color-gray-2); /* 소형 텍스트 — 4.5:1 이상 */
+	}
+
+	.source-publisher {
+		font-weight: 700;
+		color: var(--sl-color-gray-2);
+	}
+
+	.source-url {
+		margin: 0.15rem 0 0;
+		font-family: var(--sl-font-mono);
+		font-size: 0.75rem;
+		color: var(--sl-color-gray-2); /* 모노 소형 URL — 4.5:1 이상 */
+		overflow-wrap: anywhere;
+	}
+</style>

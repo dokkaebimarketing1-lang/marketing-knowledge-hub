@@ -1,0 +1,115 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+interface Props {
+	entry: CollectionEntry<'glossary'>;
+	category: CollectionEntry<'taxonomy'>;
+	relatedEntries: CollectionEntry<'glossary'>[];
+}
+
+export const getStaticPaths = (async () => {
+	const [entries, taxonomy] = await Promise.all([
+		getCollection('glossary'),
+		getCollection('taxonomy'),
+	]);
+	const activeEntries = entries.filter((entry) => entry.data.status === 'active');
+	const activeEntryById = new Map(activeEntries.map((entry) => [entry.id, entry]));
+	const categoryById = new Map(
+		taxonomy
+			.filter((entry) => entry.data.kind === 'glossary' && entry.data.status === 'active')
+			.map((entry) => [entry.data.id, entry])
+	);
+
+	return activeEntries.map((entry) => {
+		const category = categoryById.get(entry.data.categoryId);
+		if (!category) {
+			throw new Error(
+				`Glossary entry "${entry.id}" references unresolved category "${entry.data.categoryId}".`
+			);
+		}
+
+		const relatedEntries = entry.data.relatedIds.map((relatedId) => {
+			const relatedEntry = activeEntryById.get(relatedId);
+			if (!relatedEntry) {
+				throw new Error(
+					`Glossary entry "${entry.id}" references unresolved active term "${relatedId}".`
+				);
+			}
+			return relatedEntry;
+		});
+
+		return {
+			params: { id: entry.id },
+			props: { entry, category, relatedEntries },
+		};
+	});
+}) satisfies GetStaticPaths;
+
+const { entry, category, relatedEntries } = Astro.props;
+---
+
+<StarlightPage
+	frontmatter={{
+		title: entry.data.term,
+		description: entry.data.definition,
+		contentKind: 'utility',
+		categoryId: entry.data.categoryId,
+		queryClusterId: null,
+		primaryQuery: `${entry.data.term} 뜻`,
+		searchIntent: 'informational',
+		primaryQuestion: `${entry.data.term} 뜻은 무엇인가?`,
+		shortAnswer: entry.data.definition,
+		primaryEntityId: null,
+		authorId: null,
+		publishedAt: null,
+		updatedAt: entry.data.updatedAt,
+		reviewedAt: null,
+		reviewStatus: 'human-review-needed',
+		sourceIds: entry.data.sourceIds,
+		relatedIds: entry.data.relatedIds,
+		status: 'active',
+		redirectFrom: entry.data.redirectFrom,
+	}}
+>
+	<nav aria-label="용어사전 탐색">
+		<a href="/glossary/">용어사전 전체</a>
+		<span aria-hidden="true"> · </span>
+		<a href={category.data.hubPath}>{category.data.label}</a>
+	</nav>
+
+	{
+		entry.data.aliases.length > 0 && (
+			<p class="glossary-detail-text">
+				<strong>다른 이름</strong><br />
+				{entry.data.aliases.join(' · ')}
+			</p>
+		)
+	}
+
+	<h2>정의</h2>
+	<p class="glossary-detail-text">{entry.data.definition}</p>
+
+	{
+		relatedEntries.length > 0 && (
+			<section aria-labelledby="related-terms">
+				<h2 id="related-terms">관련 용어</h2>
+				<ul>
+					{relatedEntries.map((relatedEntry) => (
+						<li>
+							<a href={`/glossary/${relatedEntry.id}/`}>{relatedEntry.data.term}</a>
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
+</StarlightPage>
+
+<style>
+	.glossary-detail-text {
+		word-break: keep-all;
+		overflow-wrap: break-word;
+	}
+</style>

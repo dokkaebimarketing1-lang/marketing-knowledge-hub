@@ -1,0 +1,529 @@
+/* ==========================================================================
+   마케팅 지식허브 — 커스텀 테마 (Starlight 0.41 CSS 변수 기반)
+   모던 미니멀 지식베이스 · 한국어 타이포 · 다크/라이트 · 반응형
+   --------------------------------------------------------------------------
+   Starlight 0.41은 `colors` 설정 키를 제거했으므로 색상 테마는
+   customCss에서 `--sl-color-*` 변수를 덮어써서 연결한다.
+   (기본 다크 = `:root`, 라이트 = `:root[data-theme='light']`)
+   ========================================================================== */
+
+/* ── 1. 한국어 타이포 ─────────────────────────────────────────────── */
+:root {
+	/* Pretendard 우선 + 시스템 한글 폰트 폴백 (외부 패키지 없이 한글 정렬) */
+	--sl-font:
+		'Pretendard Variable', 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo',
+		'Malgun Gothic', 'Segoe UI', sans-serif;
+
+	/* 본문 행간 + 미세 자간 (한글 가독성) */
+	--sl-line-height: 1.75;
+	letter-spacing: -0.005em;
+
+	/* 네이티브 스크롤바/폼 컨트롤을 다크로 */
+	color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+	color-scheme: light;
+}
+
+/* 제목 계열은 타이트한 자간으로 모던한 느낌 */
+.site-title,
+.hero h1,
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4 {
+	letter-spacing: -0.025em;
+}
+
+/* 한글 텍스트 안전 줄바꿈: 단어가 음절 중간에서 분리되지 않게 keep-all,
+   긴 영어·URL 등은 overflow-wrap으로 안전하게 처리 */
+.hero .tagline,
+.mk-section-title,
+.mk-section-sub,
+.mk-card-title,
+.mk-card-desc,
+.mk-tools > p,
+.mk-tool-list a,
+.mk-recent .title,
+.mk-recent .desc {
+	word-break: keep-all;
+	overflow-wrap: break-word;
+}
+
+/* 히어로 CTA 버튼: 모바일 터치 타깃 최소 44px */
+.hero .sl-link-button {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+}
+
+/* ── 2. 컬러 팔레트 (다크 모드 기본) ──────────────────────────────── */
+:root {
+	/* 중성 회색: 푸른빛이 도는 쿨 뉴트럴 */
+	--sl-color-white: hsl(0, 0%, 100%);
+	--sl-color-gray-1: hsl(215, 24%, 94%);
+	--sl-color-gray-2: hsl(215, 10%, 76%);
+	--sl-color-gray-3: hsl(215, 9%, 55%);
+	--sl-color-gray-4: hsl(215, 9%, 37%);
+	--sl-color-gray-5: hsl(215, 13%, 23%);
+	--sl-color-gray-6: hsl(215, 17%, 16%);
+	--sl-color-black: hsl(215, 15%, 9%);
+
+	/* 억센트: 세이지 그린 틸 (성장/지식 이미지) */
+	--sl-color-accent-low: hsl(166, 48%, 17%);
+	--sl-color-accent: hsl(166, 60%, 55%);
+	--sl-color-accent-high: hsl(166, 84%, 87%);
+
+	/* 의미 연결 변수 */
+	--sl-color-text: var(--sl-color-gray-2);
+	--sl-color-text-accent: var(--sl-color-accent-high);
+	--sl-color-text-invert: var(--sl-color-accent-low);
+	--sl-color-bg: var(--sl-color-black);
+	--sl-color-bg-nav: var(--sl-color-gray-6);
+	--sl-color-bg-sidebar: var(--sl-color-gray-6);
+	--sl-color-bg-inline-code: var(--sl-color-gray-5);
+	--sl-color-bg-accent: var(--sl-color-accent-high);
+	--sl-color-hairline-light: var(--sl-color-gray-5);
+	--sl-color-hairline: var(--sl-color-gray-6);
+	--sl-color-hairline-shade: var(--sl-color-black);
+
+	/* 홈 배경 미묘한 글로우 (모던 미니멀 분위기) */
+	--mk-glow:
+		radial-gradient(52rem 26rem at 76% -8rem, hsla(166, 62%, 55%, 0.11), transparent 62%),
+		radial-gradient(40rem 22rem at -10% 30%, hsla(222, 70%, 55%, 0.06), transparent 60%);
+}
+
+/* ── 3. 컬러 팔레트 (라이트 모드) ─────────────────────────────────── */
+:root[data-theme='light'] {
+	--sl-color-white: hsl(215, 15%, 9%);
+	--sl-color-gray-1: hsl(215, 18%, 16%);
+	--sl-color-gray-2: hsl(215, 13%, 25%);
+	--sl-color-gray-3: hsl(215, 8%, 40%);
+	--sl-color-gray-4: hsl(215, 7%, 56%);
+	--sl-color-gray-5: hsl(215, 8%, 77%);
+	--sl-color-gray-6: hsl(215, 24%, 94%);
+	--sl-color-gray-7: hsl(215, 26%, 97%);
+	--sl-color-black: hsl(0, 0%, 100%);
+
+	--sl-color-accent-low: hsl(166, 72%, 91%);
+	--sl-color-accent: hsl(166, 62%, 34%);
+	--sl-color-accent-high: hsl(166, 65%, 24%);
+
+	--sl-color-text-accent: var(--sl-color-accent);
+	--sl-color-text-invert: var(--sl-color-black);
+	--sl-color-bg-nav: var(--sl-color-gray-7);
+	--sl-color-bg-sidebar: var(--sl-color-bg);
+	--sl-color-bg-inline-code: var(--sl-color-gray-6);
+	--sl-color-bg-accent: var(--sl-color-accent);
+	--sl-color-hairline-light: var(--sl-color-gray-6);
+	--sl-color-hairline-shade: var(--sl-color-gray-6);
+
+	--mk-glow:
+		radial-gradient(52rem 26rem at 76% -8rem, hsla(166, 60%, 40%, 0.08), transparent 62%),
+		radial-gradient(40rem 22rem at -10% 30%, hsla(222, 70%, 50%, 0.05), transparent 60%);
+}
+
+/* 글로우 배경 적용 */
+body {
+	background-image: var(--mk-glow);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+/* Starlight 기본 폭(6.25em)에서 잘리는 한국어 테마명을 온전히 표시.
+   "어두운 테마"(9글자)가 ellipsis로 잘리지 않도록 여유 폭을 준다.
+   (Select.astro는 `--sl-select-width` + 패딩으로 select 폭을 계산) */
+starlight-theme-select label {
+	--sl-select-width: 13em !important;
+}
+
+/* ── 4. 홈 허브 — 현황 통계 스트립 ─────────────────────────────────── */
+.mk-stats {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	column-gap: 2rem;
+	row-gap: 0.4rem;
+	margin: 1.5rem auto 0;
+	padding: 0.85rem 1.5rem;
+	max-width: 46rem;
+	border: 1px solid var(--sl-color-hairline);
+	border-radius: 0.9rem;
+	background: var(--sl-color-bg-nav);
+	font-size: 0.875rem;
+	color: var(--sl-color-gray-2);
+}
+
+.mk-stats strong {
+	margin-right: 0.3rem;
+	color: var(--sl-color-text);
+	font-weight: 800;
+	font-variant-numeric: tabular-nums;
+}
+
+/* ── 5. 홈 허브 — 섹션 공통 ───────────────────────────────────────── */
+.mk-section {
+	margin-top: 3.25rem;
+}
+
+.mk-section-head {
+	display: flex;
+	flex-direction: column; /* 모바일: 제목·설명 세로 배치 */
+	align-items: flex-start;
+	gap: 0.35rem;
+	margin-bottom: 1.1rem;
+}
+
+@media (min-width: 48em) {
+	.mk-section-head {
+		flex-direction: row; /* 데스크톱: 기존 가로 배치 유지 */
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+}
+
+.mk-section-title {
+	margin: 0;
+	font-size: 1.375rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+}
+
+.mk-section-sub {
+	margin: 0;
+	font-size: 0.875rem;
+	color: var(--sl-color-gray-2);
+}
+
+/* ── 6. 홈 허브 — 카테고리 카드 (1→2→3열 반응형) ─────────────────── */
+.mk-card-grid {
+	display: grid;
+	grid-template-columns: 1fr; /* 1열: 모바일 */
+	gap: 1rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@media (min-width: 36em) {
+	.mk-card-grid {
+		grid-template-columns: repeat(2, 1fr); /* 2열: 태블릿 */
+	}
+}
+
+@media (min-width: 62em) {
+	.mk-card-grid {
+		grid-template-columns: repeat(3, 1fr); /* 3열: 데스크톱 */
+	}
+}
+
+.mk-card {
+	--mk-card-accent: hsl(var(--mk-card-h, 166) 65% 52%);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.45rem;
+	height: 100%;
+	min-height: 10.5rem;
+	padding: 1.35rem 1.4rem 1.2rem;
+	overflow: hidden;
+	border: 1px solid var(--sl-color-hairline);
+	border-radius: 1rem;
+	background: var(--sl-color-bg-nav);
+	color: inherit;
+	text-decoration: none;
+	transition:
+		border-color 0.18s ease,
+		transform 0.18s ease,
+		box-shadow 0.18s ease;
+}
+
+:root[data-theme='light'] .mk-card {
+	--mk-card-accent: hsl(var(--mk-card-h, 166) 72% 38%);
+}
+
+/* 카드 상단 억센트 라인 */
+.mk-card::before {
+	content: '';
+	position: absolute;
+	inset: 0 0 auto 0;
+	height: 3px;
+	background: linear-gradient(90deg, var(--mk-card-accent), transparent 72%);
+	opacity: 0.9;
+}
+
+.mk-card:hover {
+	border-color: var(--mk-card-accent);
+	transform: translateY(-3px);
+	box-shadow: 0 12px 26px -14px hsl(var(--mk-card-h, 166) 60% 40% / 0.45);
+}
+
+.mk-card-kicker {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.75rem;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	color: var(--mk-card-accent);
+}
+
+.mk-card-kicker::before {
+	content: '';
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 999px;
+	background: var(--mk-card-accent);
+}
+
+.mk-card-title {
+	margin: 0.15rem 0 0;
+	font-size: 1.125rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	color: var(--sl-color-text);
+}
+
+.mk-card-desc {
+	margin: 0;
+	font-size: 0.875rem;
+	line-height: 1.6;
+	color: var(--sl-color-gray-2); /* 다크모드 대비 한 단계 상향 */
+}
+
+.mk-card-foot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: auto;
+	padding-top: 0.8rem;
+	border-top: 1px dashed var(--sl-color-hairline);
+	font-size: 0.875rem;
+	color: var(--sl-color-gray-3);
+}
+
+.mk-card-foot .count {
+	font-weight: 700;
+	color: var(--sl-color-gray-2);
+	font-variant-numeric: tabular-nums;
+}
+
+.mk-card-arrow {
+	color: var(--mk-card-accent);
+	transition: transform 0.18s ease;
+}
+
+.mk-card:hover .mk-card-arrow {
+	transform: translateX(3px);
+}
+
+/* ── 7. 홈 허브 — 용어사전/툴 배너 ───────────────────────────────── */
+.mk-tools {
+	margin-top: 3.25rem;
+	padding: 1.6rem 1.75rem 1.75rem;
+	border: 1px solid var(--sl-color-hairline);
+	border-radius: 1rem;
+	background:
+		linear-gradient(135deg, hsla(166, 62%, 55%, 0.09), transparent 55%),
+		var(--sl-color-bg-nav);
+}
+
+:root[data-theme='light'] .mk-tools {
+	background:
+		linear-gradient(135deg, hsla(166, 70%, 45%, 0.08), transparent 55%),
+		var(--sl-color-bg-nav);
+}
+
+.mk-tools h2 {
+	margin: 0 0 0.35rem;
+	font-size: 1.25rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+}
+
+.mk-tools > p {
+	margin: 0 0 1.1rem;
+	font-size: 0.9rem;
+	color: var(--sl-color-gray-2);
+}
+
+.mk-tool-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.75rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@media (min-width: 40em) {
+	.mk-tool-list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.mk-tool-list a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	min-height: 44px; /* 터치 타깃 최소 높이 */
+	padding: 0.9rem 1.05rem;
+	border: 1px solid var(--sl-color-hairline);
+	border-radius: 0.75rem;
+	background: var(--sl-color-bg);
+	color: var(--sl-color-text);
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-decoration: none;
+	transition:
+		border-color 0.18s ease,
+		transform 0.18s ease;
+}
+
+.mk-tool-list a:hover {
+	border-color: var(--sl-color-accent);
+	transform: translateY(-2px);
+}
+
+.mk-tool-list .tag {
+	flex-shrink: 0;
+	padding: 0.18rem 0.55rem;
+	border-radius: 999px;
+	font-size: 0.6875rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	color: var(--sl-color-text-accent);
+	background: var(--sl-color-accent-low);
+}
+
+/* ── 8. 홈 허브 — 최근 문서 ──────────────────────────────────────── */
+/* grid 트랙을 minmax(0, 1fr)로: grid item의 min-content 확장(가로 오버플로) 방지 */
+.mk-recent {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr); /* 1열: 모바일 */
+	gap: 0.65rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@media (min-width: 40em) {
+	.mk-recent {
+		grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2열: 데스크톱 */
+	}
+}
+
+.mk-recent > li {
+	min-width: 0;
+}
+
+.mk-recent a {
+	min-width: 0;
+	width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column; /* 모바일: 제목/요약이 전체 폭을 쓰고 메타는 아래 */
+	align-items: stretch;
+	gap: 0.6rem;
+	padding: 0.9rem 1.05rem;
+	border: 1px solid var(--sl-color-hairline);
+	border-radius: 0.8rem;
+	background: var(--sl-color-bg-nav);
+	color: inherit;
+	text-decoration: none;
+	transition:
+		border-color 0.18s ease,
+		background-color 0.18s ease;
+}
+
+@media (min-width: 40em) {
+	.mk-recent a {
+		flex-direction: row; /* 데스크톱: 기존 가로 구조 복원 */
+		align-items: center;
+		gap: 1rem;
+	}
+}
+
+.mk-recent a:hover {
+	border-color: var(--sl-color-accent);
+}
+
+.mk-recent .body {
+	min-width: 0;
+	flex: 1;
+}
+
+.mk-recent .title {
+	display: block;
+	font-size: 0.9375rem;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.mk-recent .desc {
+	display: block;
+	margin-top: 0.2rem;
+	font-size: 0.85rem;
+	color: var(--sl-color-gray-2); /* 다크모드 대비 한 단계 상향 */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.mk-recent .meta {
+	flex-shrink: 0;
+	display: flex;
+	flex-direction: row; /* 모바일: 카테고리·날짜 가로 배치 */
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	font-size: 0.85rem;
+	color: var(--sl-color-gray-3);
+}
+
+@media (min-width: 40em) {
+	.mk-recent .meta {
+		flex-direction: column; /* 데스크톱: 기존 세로 구조 복원 */
+		align-items: flex-end;
+		gap: 0.3rem;
+	}
+}
+
+.mk-recent .cat {
+	padding: 0.15rem 0.5rem;
+	border-radius: 999px;
+	font-size: 0.6875rem;
+	font-weight: 800;
+	color: var(--sl-color-text-accent);
+	background: var(--sl-color-accent-low);
+}
+
+/* ── 9. 다크/라이트 전환 부드럽게 ─────────────────────────────────── */
+html {
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html,
+	.mk-card,
+	.mk-card-arrow,
+	.mk-tool-list a,
+	.mk-recent a {
+		transition: none;
+	}
+
+	.mk-card:hover,
+	.mk-card:hover .mk-card-arrow,
+	.mk-tool-list a:hover {
+		transform: none;
+	}
+}

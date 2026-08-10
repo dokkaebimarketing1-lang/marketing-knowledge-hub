@@ -1,0 +1,323 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+import GlossaryTooltip from '../components/GlossaryTooltip.astro';
+
+// 용어사전 데이터 로드 — 카테고리 그룹핑
+// 공개 기준: status === 'active' (폐기 용어는 인덱스에서 제외).
+const entries = (await getCollection('glossary')).filter(
+	(entry) => entry.data.status === 'active'
+);
+const taxonomy = await getCollection('taxonomy');
+
+const categories = taxonomy
+	.filter((entry) => entry.data.kind === 'glossary' && entry.data.status === 'active')
+	.sort((a, b) => a.data.order - b.data.order);
+const categoryById = new Map(categories.map((entry) => [entry.data.id, entry]));
+
+type GlossaryEntry = (typeof entries)[number];
+
+function entryCategoryId(entry: GlossaryEntry): string | undefined {
+	return entry.data.categoryId;
+}
+
+function entryCategoryLabel(entry: GlossaryEntry): string {
+	const categoryId = entryCategoryId(entry);
+	return (categoryId ? categoryById.get(categoryId)?.data.label : undefined) ?? '';
+}
+
+const grouped = categories
+	.map((category) => ({
+		category,
+		items: entries.filter((entry) => entryCategoryId(entry) === category.data.id),
+	}))
+	.filter((g) => g.items.length > 0);
+
+const total = grouped.reduce((sum, group) => sum + group.items.length, 0);
+---
+
+<StarlightPage
+	frontmatter={{
+		title: '마케팅 용어사전',
+		description:
+			'마케팅 데이터 분석(GA4)부터 검색·SNS·광고·전략까지 — 마케터가 알아야 할 필수 용어를 카테고리별로 정리한 용어사전입니다.',
+		// ── 게시 지식 계약(strict): 탐색용 custom page는 utility 계약을 따른다 ──
+		contentKind: 'utility',
+		categoryId: null,
+		queryClusterId: null,
+		primaryQuery: '마케팅 용어사전',
+		searchIntent: 'navigational',
+		primaryQuestion: '마케팅 용어사전에는 어떤 용어가 있나?',
+		shortAnswer:
+			'마케팅 데이터 분석부터 검색·SNS·광고·전략까지 필수 용어를 카테고리별로 정리한 용어사전.',
+		primaryEntityId: null,
+		authorId: null,
+		publishedAt: null,
+		updatedAt: '2026-08-08',
+		reviewedAt: null,
+		reviewStatus: 'human-review-needed',
+		sourceIds: [],
+		relatedIds: [],
+		status: 'active',
+		redirectFrom: [],
+	}}
+>
+	<p class="glossary-intro">
+		카테고리별로 정리한 마케팅 용어 <strong>{total}개</strong>. 검색창에 용어·영문명·설명을
+		입력하면 <strong>실시간으로</strong> 필터링됩니다.
+	</p>
+
+	<div class="glossary-search-box">
+		<label class="glossary-search-label" for="glossary-search">용어 검색</label>
+		<input
+			id="glossary-search"
+			class="glossary-search"
+			type="search"
+			placeholder="예: ROAS, 세션, 리타겟팅…"
+			autocomplete="off"
+		/>
+		<span id="glossary-count" class="glossary-count" role="status">총 {total}개 용어</span>
+	</div>
+
+	<div id="glossary-empty" class="glossary-empty" hidden>
+		검색 결과가 없습니다. 다른 키워드로 다시 검색해 보세요.
+	</div>
+
+	{
+		grouped.map((group) => (
+			<section id={group.category.data.id} data-category-section>
+				<h2 class="glossary-category">
+					{group.category.data.label}
+					<span class="glossary-category-count">{group.items.length}개</span>
+				</h2>
+				<ul class="glossary-list">
+					{group.items.map((entry) => {
+						const categoryLabel = entryCategoryLabel(entry);
+						const haystack = [
+							entry.data.term,
+							...(entry.data.aliases ?? []),
+							categoryLabel,
+							entry.data.definition,
+						]
+							.join(' ')
+							.toLowerCase();
+						return (
+							<li
+								class="glossary-card"
+								data-glossary-card
+								data-search={haystack}
+								data-category={categoryLabel}
+							>
+								<h3 class="glossary-term">
+									<a href={`/glossary/${entry.id}/`}>{entry.data.term}</a>
+								</h3>
+								{
+									entry.data.aliases && entry.data.aliases.length > 0 && (
+										<ul class="glossary-aliases">
+											{entry.data.aliases.map((alias) => (
+												<li>{alias}</li>
+											))}
+										</ul>
+									)
+								}
+								<p class="glossary-definition">{entry.data.definition}</p>
+								{
+									entry.data.relatedIds && entry.data.relatedIds.length > 0 && (
+										<p class="glossary-related">
+											<span class="glossary-related-label">관련 용어</span>
+											{entry.data.relatedIds.map((rel) => (
+												<GlossaryTooltip term={rel} />
+											))}
+										</p>
+									)
+								}
+							</li>
+						);
+					})}
+				</ul>
+			</section>
+		))
+	}
+</StarlightPage>
+
+<style>
+	.glossary-intro {
+		margin: 1rem 0 1.5rem;
+		color: var(--sl-color-gray-3);
+		word-break: keep-all;
+		overflow-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	.glossary-search-box {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.6rem 1rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.glossary-search-label {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--sl-color-gray-2);
+	}
+
+	.glossary-search {
+		flex: 1 1 260px;
+		max-width: 420px;
+		padding: 0.6rem 0.9rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		background: var(--sl-color-gray-7);
+		color: var(--sl-color-white);
+		font-size: 0.95rem;
+	}
+
+	.glossary-search:focus {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 1px;
+		border-color: var(--sl-color-accent);
+	}
+
+	.glossary-count {
+		font-size: 0.85rem;
+		color: var(--sl-color-gray-2);
+	}
+
+	.glossary-empty {
+		margin: 1rem 0 2rem;
+		padding: 1rem 1.2rem;
+		border: 1px dashed var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		color: var(--sl-color-gray-2);
+	}
+
+	.glossary-category {
+		display: flex;
+		align-items: baseline;
+		gap: 0.6rem;
+		margin: 2rem 0 1rem;
+		padding-bottom: 0.4rem;
+		border-bottom: 1px solid var(--sl-color-gray-6);
+		font-size: 1.25rem;
+	}
+
+	.glossary-category-count {
+		font-size: 0.8rem;
+		font-weight: 500;
+		color: var(--sl-color-gray-2);
+	}
+
+	.glossary-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 1rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.glossary-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1.1rem 1.2rem;
+		border: 1px solid var(--sl-color-gray-6);
+		border-radius: 0.6rem;
+		background: var(--sl-color-gray-7);
+	}
+
+	.glossary-card[hidden] {
+		display: none;
+	}
+
+	.glossary-term {
+		margin: 0;
+		font-size: 1.05rem;
+		font-weight: 700;
+		color: var(--sl-color-accent);
+	}
+
+	.glossary-aliases {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.glossary-aliases li {
+		padding: 0.1rem 0.45rem;
+		border-radius: 0.3rem;
+		background: color-mix(in srgb, var(--sl-color-accent) 14%, transparent);
+		color: var(--sl-color-accent-high);
+		font-size: 0.75rem;
+	}
+
+	.glossary-definition {
+		margin: 0;
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: var(--sl-color-gray-3);
+		word-break: keep-all;
+	}
+
+	.glossary-related {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.4rem;
+		margin: 0.3rem 0 0;
+	}
+
+	.glossary-related-label {
+		font-size: 0.75rem;
+		color: var(--sl-color-gray-2);
+	}
+</style>
+
+<script>
+	// ── 실시간 검색 (vanilla JS) ─────────────────────────────────────
+	const input = document.getElementById('glossary-search') as HTMLInputElement;
+	const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-glossary-card]'));
+	const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-category-section]'));
+	const countEl = document.getElementById('glossary-count') as HTMLSpanElement;
+	const emptyEl = document.getElementById('glossary-empty') as HTMLDivElement;
+
+	const TOTAL = cards.length;
+
+	function normalize(value: string): string {
+		return value.trim().toLowerCase();
+	}
+
+	function update(query: string): void {
+		const q = normalize(query);
+		let visible = 0;
+
+		for (const card of cards) {
+			const haystack = card.dataset.search ?? '';
+			const match = q === '' || haystack.includes(q);
+			card.hidden = !match;
+			if (match) visible++;
+		}
+
+		let visibleSections = 0;
+		for (const section of sections) {
+			const anyVisible = Array.from(
+				section.querySelectorAll<HTMLElement>('[data-glossary-card]')
+			).some((card) => !card.hidden);
+			section.hidden = !anyVisible;
+			if (anyVisible) visibleSections++;
+		}
+
+		emptyEl.hidden = visible !== 0;
+		countEl.textContent =
+			q === ''
+				? `총 ${TOTAL}개 용어`
+				: `${visible}개 용어 검색됨 (${visibleSections}개 카테고리)`;
+	}
+
+	input.addEventListener('input', () => update(input.value));
+</script>

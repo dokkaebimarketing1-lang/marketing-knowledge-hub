@@ -1,0 +1,385 @@
+---
+import { getContentIndex } from '../lib/content-index';
+
+/**
+ * 용어사전 기반 툴팁 컴포넌트.
+ * `term`으로 용어사전 항목의 slug(id)를 받아 정의를 조회한다.
+ * 실제 <button>으로 렌더링하며, 클라이언트 스크립트가 고유 id를 할당해
+ * aria-describedby로 툴팁(role="tooltip")과 연결한다.
+ * hover로 열고, 클릭 시 pinned 고정(재클릭 시 닫힘), 외부 클릭·Escape로 닫는다.
+ */
+interface Props {
+	/** 용어사전 항목 id (예: 'roas') */
+	term: string;
+	/** 표시 텍스트 (기본: 해당 용어의 term 값) */
+	label?: string;
+}
+
+const { term, label } = Astro.props;
+
+// 공유 액티브 인덱스에서 해석 — 인스턴스별 getCollection/선형 스캔 없음.
+const entry = (await getContentIndex().getActiveGlossary()).get(term);
+if (!entry) {
+	throw new Error(`GlossaryTooltip could not resolve active glossary term "${term}".`);
+}
+
+const text = label ?? entry.data.term;
+const definition = entry.data.definition;
+const category = entry.data.categoryId;
+const href = `/glossary/${entry.id}/`;
+---
+
+<button
+	type="button"
+	class="gt-trigger"
+	data-glossary-tooltip
+	data-term={text}
+	data-definition={definition}
+	data-category={category}
+	data-href={href}
+	aria-label={`${text} 용어 설명 보기`}
+	aria-expanded="false"
+>
+	{text}
+	<span class="gt-mark" aria-hidden="true">ⓘ</span>
+</button>
+
+<style>
+	.gt-trigger {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.15rem;
+		padding: 0;
+		border: none;
+		border-bottom: 1px dotted var(--sl-color-accent);
+		border-radius: 2px;
+		background: none;
+		color: var(--sl-color-accent);
+		font: inherit;
+		font-size: 0.8rem;
+		line-height: inherit;
+		cursor: help;
+		user-select: none;
+		vertical-align: baseline;
+	}
+
+	.gt-trigger:hover {
+		border-bottom-style: solid;
+	}
+
+	.gt-trigger:focus-visible {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 2px;
+		border-bottom-style: solid;
+	}
+
+	.gt-trigger[aria-expanded='true'] {
+		border-bottom-style: solid;
+	}
+
+	.gt-mark {
+		font-size: 0.7em;
+		opacity: 0.8;
+	}
+
+	@media (pointer: coarse) {
+		.gt-trigger {
+			min-width: 44px;
+			min-height: 44px;
+			justify-content: center;
+		}
+	}
+</style>
+
+<style is:global>
+	/* body에 동적 추가되는 툴팁 요소 — 컴포넌트 스코프 밖이므로 전역 스타일 */
+	.gt-pop {
+		position: fixed;
+		z-index: 1000;
+		max-width: 320px;
+		padding: 0.7rem 0.9rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.5rem;
+		background: var(--sl-color-gray-6);
+		box-shadow: 0 6px 20px rgb(0 0 0 / 0.35);
+		font-size: 0.82rem;
+		line-height: 1.55;
+		color: var(--sl-color-white);
+		word-break: keep-all;
+		overflow-wrap: break-word;
+		pointer-events: none;
+		visibility: hidden;
+		opacity: 0;
+		transition:
+			opacity 0.12s ease,
+			visibility 0.12s;
+	}
+
+	.gt-pop.is-visible {
+		pointer-events: auto;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.gt-pop__term {
+		font-weight: 700;
+		color: var(--sl-color-accent);
+	}
+
+	.gt-pop__category {
+		margin-left: 0.4rem;
+		font-size: 0.72rem;
+		color: var(--sl-color-gray-2);
+	}
+
+	.gt-pop__definition {
+		display: block;
+		margin-top: 0.25rem;
+	}
+
+	.gt-pop__link {
+		display: inline-block;
+		margin-top: 0.5rem;
+		color: var(--sl-color-accent-high);
+		font-weight: 700;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.gt-pop {
+			transition: none;
+		}
+	}
+</style>
+
+<script>
+	// ── 툴팁 초기화 (vanilla JS, 이벤트 위임) ────────────────────────
+	// 동일 스크립트가 중복 실행되더라도 한 번만 초기화한다.
+	const win = window as unknown as { __gtTooltipInit?: boolean };
+	if (!win.__gtTooltipInit) {
+		win.__gtTooltipInit = true;
+		initTooltips();
+	}
+
+	function initTooltips(): void {
+		const SELECTOR = '[data-glossary-tooltip]';
+		const triggers = Array.from(document.querySelectorAll<HTMLElement>(SELECTOR));
+
+		// 1) 모든 트리거를 열거해 고유 툴팁 id를 할당하고 aria-describedby 연결
+		const popMap = new WeakMap<HTMLElement, HTMLElement>();
+		triggers.forEach((trigger, index) => {
+			if (!trigger.hasAttribute('aria-describedby')) {
+				trigger.setAttribute('aria-describedby', `gt-pop-${index}`);
+			}
+			const popId = trigger.getAttribute('aria-describedby')!;
+			let pop = document.getElementById(popId) as HTMLElement | null;
+			if (!pop) {
+				pop = document.createElement('div');
+				pop.id = popId;
+				pop.className = 'gt-pop';
+				pop.setAttribute('role', 'tooltip');
+				document.body.append(pop);
+			}
+			popMap.set(trigger, pop);
+		});
+
+		// ── 상태 ──
+		// pinned: 클릭으로 고정된 상태. pinned 동안에는 hover/focus 아웃으로 닫히지 않는다.
+		// pinnedTrigger: 클릭으로 고정된 트리거 (focusin으로 activeTrigger가 바뀌어도 유지).
+		let activeTrigger: HTMLElement | null = null;
+		let activePop: HTMLElement | null = null;
+		let pinned = false;
+		let pinnedTrigger: HTMLElement | null = null;
+		let rafId = 0;
+
+		// ── 표시 / 숨김 ──
+		function open(trigger: HTMLElement): void {
+			const pop = popMap.get(trigger);
+			if (!pop) return;
+			// 한 번에 하나의 툴팁만 표시
+			if (activeTrigger && activeTrigger !== trigger) hide();
+
+			const definition = trigger.dataset.definition ?? '';
+			const category = trigger.dataset.category ?? '';
+			const term = trigger.dataset.term ?? trigger.textContent?.trim() ?? '';
+			const href = trigger.dataset.href;
+			if (!definition || !href) {
+				throw new Error(`Glossary tooltip data is incomplete for "${term}".`);
+			}
+
+			pop.textContent = '';
+			const termEl = document.createElement('span');
+			termEl.className = 'gt-pop__term';
+			termEl.textContent = term;
+			pop.append(termEl);
+
+			if (category) {
+				const catEl = document.createElement('span');
+				catEl.className = 'gt-pop__category';
+				catEl.textContent = `· ${category}`;
+				pop.append(catEl);
+			}
+
+			const defEl = document.createElement('span');
+			defEl.className = 'gt-pop__definition';
+			defEl.textContent = definition;
+			pop.append(defEl);
+
+			const detailLink = document.createElement('a');
+			detailLink.className = 'gt-pop__link';
+			detailLink.href = href;
+			detailLink.textContent = '자세히 보기';
+			detailLink.setAttribute('aria-label', `${term} 자세히 보기`);
+			pop.append(detailLink);
+
+			position(pop, trigger);
+			pop.classList.add('is-visible');
+			activeTrigger = trigger;
+			activePop = pop;
+			trigger.setAttribute('aria-expanded', 'true');
+		}
+
+		function hide(): void {
+			if (activePop) activePop.classList.remove('is-visible');
+			if (activeTrigger) activeTrigger.setAttribute('aria-expanded', 'false');
+			activeTrigger = null;
+			activePop = null;
+		}
+
+		function position(pop: HTMLElement, trigger: HTMLElement): void {
+			const rect = trigger.getBoundingClientRect();
+			const popRect = pop.getBoundingClientRect();
+			const margin = 8;
+			let left = rect.left;
+			let top = rect.bottom + margin;
+
+			if (left + popRect.width > window.innerWidth - margin) {
+				left = window.innerWidth - popRect.width - margin;
+			}
+			if (left < margin) left = margin;
+			if (top + popRect.height > window.innerHeight - margin) {
+				top = rect.top - popRect.height - margin;
+			}
+			if (top < margin) top = margin;
+
+			pop.style.left = `${left}px`;
+			pop.style.top = `${top}px`;
+		}
+
+		// ── 열린 상태에서 scroll/resize 시 위치 갱신 ──
+		function repositionSoon(): void {
+			cancelAnimationFrame(rafId);
+			rafId = requestAnimationFrame(() => {
+				if (activeTrigger && activePop) position(activePop, activeTrigger);
+			});
+		}
+
+		window.addEventListener(
+			'scroll',
+			() => {
+				if (activeTrigger) repositionSoon();
+			},
+			true
+		);
+		window.addEventListener('resize', () => {
+			if (activeTrigger) repositionSoon();
+		});
+
+		// ── 마우스: hover로 열기, pinned가 아니면 나가면 닫기 ──
+		document.addEventListener('pointerover', (event) => {
+			if (pinned) return;
+			if (activePop?.contains(event.target as Node)) return;
+			const target = (event.target as Element).closest<HTMLElement>(SELECTOR);
+			if (target) {
+				open(target);
+			} else if (activeTrigger) {
+				hide();
+			}
+		});
+
+		document.addEventListener('pointerout', (event) => {
+			if (pinned) return;
+			const relatedTarget = event.relatedTarget as Node | null;
+			if (relatedTarget && activePop?.contains(relatedTarget)) return;
+			const next = (relatedTarget as Element | null)?.closest<HTMLElement>(SELECTOR);
+			if (next) {
+				if (next !== activeTrigger) open(next);
+				return;
+			}
+			hide();
+		});
+
+		// ── 클릭: 같은 pinned 트리거면 닫고, 아니면 pinned로 고정해 열기 ──
+		document.addEventListener('pointerdown', (event) => {
+			if (activePop?.contains(event.target as Node)) return;
+			const target = (event.target as Element).closest<HTMLElement>(SELECTOR);
+			if (!target) {
+				pinned = false;
+				pinnedTrigger = null;
+				hide();
+			}
+		});
+
+		document.addEventListener('click', (event) => {
+			if (activePop?.contains(event.target as Node)) return;
+			const target = (event.target as Element).closest<HTMLElement>(SELECTOR);
+			if (!target) {
+				pinned = false;
+				pinnedTrigger = null;
+				hide();
+				return;
+			}
+			// 같은 버튼이 이미 pinned 상태면 언핀 + 닫기
+			if (pinned && pinnedTrigger === target) {
+				pinned = false;
+				pinnedTrigger = null;
+				hide();
+				return;
+			}
+			// 그 외(처음 클릭, 다른 트리거 클릭)는 pinned 상태로 열기
+			pinned = true;
+			pinnedTrigger = target;
+			open(target);
+		});
+
+		// ── 키보드: focus로 열기, pinned가 아니면 포커스 이탈 시 닫기, Escape로 닫기 ──
+		document.addEventListener('focusin', (event) => {
+			if (activePop?.contains(event.target as Node)) return;
+			const target = (event.target as Element).closest<HTMLElement>(SELECTOR);
+			if (target) open(target);
+		});
+
+		document.addEventListener('focusout', (event) => {
+			if (pinned) return;
+			const relatedTarget = event.relatedTarget as Node | null;
+			if (relatedTarget && activePop?.contains(relatedTarget)) return;
+			const next = (relatedTarget as Element | null)?.closest<HTMLElement>(SELECTOR);
+			if (!next) hide();
+		});
+
+		document.addEventListener('keydown', (event) => {
+			const detailLink = activePop?.querySelector<HTMLAnchorElement>('.gt-pop__link');
+			if (
+				event.key === 'Tab' &&
+				!event.shiftKey &&
+				event.target === activeTrigger &&
+				detailLink
+			) {
+				event.preventDefault();
+				detailLink.focus();
+				return;
+			}
+			if (event.key === 'Tab' && event.shiftKey && event.target === detailLink && activeTrigger) {
+				event.preventDefault();
+				activeTrigger.focus();
+				return;
+			}
+			if (event.key === 'Escape' && activePop) {
+				const trigger = activeTrigger;
+				pinned = false;
+				pinnedTrigger = null;
+				hide();
+				if (trigger && event.target !== trigger) trigger.focus();
+			}
+		});
+	}
+</script>

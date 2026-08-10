@@ -1,0 +1,389 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+---
+
+<StarlightPage
+	frontmatter={{
+		title: '광고 성과 계산기 (ROAS·CPA·CAC)',
+		description:
+			'광고비·귀속 매출·마진율·전환수·신규 고객 수를 입력하면 ROAS, 순이익, CPA, CAC, 손익분기 ROAS를 한눈에 계산해 줍니다.',
+		// ── 게시 지식 계약(strict): 계산 도구는 utility 계약을 따른다 ──
+		contentKind: 'utility',
+		categoryId: 'performance',
+		queryClusterId: null,
+		primaryQuery: '광고 성과 계산기',
+		searchIntent: 'transactional',
+		primaryQuestion: 'ROAS·CPA·CAC는 어떻게 계산하나?',
+		shortAnswer:
+			'광고비·귀속 매출·마진율·전환수·신규 고객 수 입력으로 ROAS·순이익·CPA·CAC·손익분기 ROAS를 계산하는 도구.',
+		primaryEntityId: 'roas',
+		authorId: null,
+		publishedAt: null,
+		updatedAt: '2026-08-08',
+		reviewedAt: null,
+		reviewStatus: 'human-review-needed',
+		sourceIds: ['google-ads-optimization-guide'],
+		relatedIds: [],
+		status: 'active',
+		redirectFrom: [],
+	}}
+>
+	<p>
+		광고비와 귀속 매출, 마진율, 전환수, 신규 고객 수를 입력하면 <strong>ROAS</strong>,{' '}
+		<strong>순이익</strong>, <strong>CPA</strong>, <strong>CAC</strong>,{' '}
+		<strong>손익분기 ROAS</strong>를 자동으로 계산합니다. 모든 계산은 브라우저에서 즉시
+		처리되며 서버로 전송되지 않습니다.
+	</p>
+
+	<form id="roas-form" class="tool-form" onsubmit="return false">
+		<div class="field">
+			<label for="adSpend">광고비 (₩)</label>
+			<input
+				id="adSpend"
+				name="adSpend"
+				type="text"
+				inputmode="decimal"
+				placeholder="예: 1,000,000"
+				autocomplete="off"
+			/>
+		</div>
+
+		<div class="field">
+			<label for="attributedRevenue">귀속 매출 (₩)</label>
+			<input
+				id="attributedRevenue"
+				name="attributedRevenue"
+				type="text"
+				inputmode="decimal"
+				placeholder="예: 5,000,000"
+				autocomplete="off"
+			/>
+		</div>
+
+		<div class="field">
+			<label for="grossMargin">마진율 (%)</label>
+			<input
+				id="grossMargin"
+				name="grossMargin"
+				type="text"
+				inputmode="decimal"
+				placeholder="예: 30"
+				autocomplete="off"
+			/>
+		</div>
+
+		<div class="field">
+			<label for="conversions">전환수 <span class="optional">(선택)</span></label>
+			<input
+				id="conversions"
+				name="conversions"
+				type="text"
+				inputmode="numeric"
+				placeholder="예: 120"
+				autocomplete="off"
+			/>
+		</div>
+
+		<div class="field">
+			<label for="newCustomers">신규 고객 수 <span class="optional">(선택)</span></label>
+			<input
+				id="newCustomers"
+				name="newCustomers"
+				type="text"
+				inputmode="numeric"
+				placeholder="예: 100"
+				autocomplete="off"
+			/>
+		</div>
+	</form>
+
+	<h2>결과</h2>
+	<div class="result-grid" id="resultGrid" aria-live="polite">
+		<div class="metric">
+			<span class="metric-label">ROAS</span>
+			<span class="metric-value" id="roasValue">–</span>
+			<span class="metric-hint">매출 ÷ 광고비</span>
+		</div>
+		<div class="metric">
+			<span class="metric-label">순이익</span>
+			<span class="metric-value" id="profitValue">–</span>
+			<span class="metric-hint">매출 × 마진율 − 광고비</span>
+		</div>
+		<div class="metric">
+			<span class="metric-label">CPA</span>
+			<span class="metric-value" id="cpaValue">–</span>
+			<span class="metric-hint">광고비 ÷ 전환수</span>
+		</div>
+		<div class="metric">
+			<span class="metric-label">CAC</span>
+			<span class="metric-value" id="cacValue">–</span>
+			<span class="metric-hint">광고비 ÷ 신규 고객 수</span>
+		</div>
+		<div class="metric">
+			<span class="metric-label">손익분기 ROAS</span>
+			<span class="metric-value" id="breakevenValue">–</span>
+			<span class="metric-hint">100 ÷ 마진율</span>
+		</div>
+	</div>
+
+	<p class="note">
+		※ 위 <strong>CAC</strong>는 <strong>광고비만을 기준</strong>으로 계산한 값입니다. 영업·마케팅
+		전체 CAC(고객 획득 비용)를 구하려면 인건비, 마케팅 툴·콘텐츠 비용 등을 포함한{' '}
+		<strong>영업·마케팅 총비용</strong>을 신규 고객 수로 나눠야 합니다.
+	</p>
+
+	<div class="verdict" id="verdict" role="status">
+		광고비를 입력하면 ROAS·순이익·CPA·CAC·손익분기 ROAS가 계산됩니다.
+	</div>
+</StarlightPage>
+
+<style>
+	.tool-form {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+		margin: 1.5rem 0;
+		padding: 1.25rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.6rem;
+	}
+
+	.field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		min-width: 0;
+	}
+
+	.field label {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--sl-color-gray-3);
+	}
+
+	.field .optional {
+		font-weight: 400;
+		color: var(--sl-color-gray-5);
+	}
+
+	.field input {
+		padding: 0.55rem 0.7rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.4rem;
+		background: var(--sl-color-gray-6);
+		color: var(--sl-color-white);
+		font-size: 1rem;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.field input:focus {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: 1px;
+		border-color: var(--sl-color-accent);
+	}
+
+	.result-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+		margin: 1rem 0;
+	}
+
+	.metric {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		min-width: 0;
+		padding: 1.1rem 1.25rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.6rem;
+		background: var(--sl-color-gray-7);
+	}
+
+	.metric-label {
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		color: var(--sl-color-gray-2); /* 소형 메타 라벨 — 4.5:1 이상 */
+	}
+
+	.metric-value {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--sl-color-accent);
+		font-variant-numeric: tabular-nums;
+		overflow-wrap: anywhere;
+	}
+
+	.metric-hint {
+		font-size: 0.75rem;
+		color: var(--sl-color-gray-5);
+	}
+
+	.verdict {
+		margin: 1rem 0;
+		padding: 0.9rem 1.1rem;
+		border-radius: 0.5rem;
+		background: var(--sl-color-gray-6);
+		border: 1px solid var(--sl-color-gray-5);
+		font-size: 0.9rem;
+		color: var(--sl-color-gray-2);
+	}
+
+	.note {
+		margin: 1rem 0;
+		padding: 0.8rem 1rem;
+		border-left: 3px solid var(--sl-color-accent);
+		border-radius: 0 0.4rem 0.4rem 0;
+		background: var(--sl-color-gray-7);
+		font-size: 0.85rem;
+		color: var(--sl-color-gray-3);
+	}
+
+	.verdict.positive {
+		border-color: var(--sl-color-green);
+		color: var(--sl-color-green-high);
+	}
+
+	.verdict.negative {
+		border-color: var(--sl-color-red);
+		color: var(--sl-color-red-high);
+	}
+
+	.verdict.info {
+		border-color: var(--sl-color-blue);
+		color: var(--sl-color-blue-high);
+	}
+</style>
+
+<script>
+	// ── 순수 계산 함수 ──────────────────────────────────────────────
+	/** 문자열을 숫자로 파싱 (콤마 제거, 빈 값/비숫자 → NaN) */
+	function parseNumber(value: string): number {
+		if (!value.trim()) return NaN;
+		const cleaned = value.replace(/,/g, '').trim();
+		const n = Number(cleaned);
+		return Number.isFinite(n) ? n : NaN;
+	}
+
+	/** 유효한 양수인지 검사 */
+	function isPositive(n: number): boolean {
+		return Number.isFinite(n) && n > 0;
+	}
+
+	/** 유효한 비음수인지 검사 (마진율 등) */
+	function isValid(n: number): boolean {
+		return Number.isFinite(n) && n >= 0;
+	}
+
+	/** ROAS = 매출 ÷ 광고비 */
+	function computeRoas(adSpend: number, revenue: number): number | null {
+		if (!isPositive(adSpend) || !isValid(revenue)) return null;
+		return revenue / adSpend;
+	}
+
+	/** 순이익 = 매출 × 마진율(%) − 광고비 */
+	function computeProfit(adSpend: number, revenue: number, marginPct: number): number | null {
+		if (!isValid(adSpend) || !isValid(revenue) || !isValid(marginPct)) return null;
+		return revenue * (marginPct / 100) - adSpend;
+	}
+
+	/** CPA = 광고비 ÷ 전환수 */
+	function computeCpa(adSpend: number, conversions: number): number | null {
+		if (!isPositive(adSpend) || !isPositive(conversions)) return null;
+		return adSpend / conversions;
+	}
+
+	/** CAC = 광고비 ÷ 신규 고객 수 */
+	function computeCac(adSpend: number, newCustomers: number): number | null {
+		if (!isPositive(adSpend) || !isPositive(newCustomers)) return null;
+		return adSpend / newCustomers;
+	}
+
+	/** 손익분기 ROAS = 100 ÷ 마진율(%) */
+	function computeBreakeven(marginPct: number): number | null {
+		if (!isPositive(marginPct)) return null;
+		return 100 / marginPct;
+	}
+
+	// ── 포맷터 ──────────────────────────────────────────────────────
+	const fmtMoney = new Intl.NumberFormat('ko-KR', {
+		style: 'currency',
+		currency: 'KRW',
+		maximumFractionDigits: 0,
+	});
+	const fmtRatio = new Intl.NumberFormat('ko-KR', {
+		maximumFractionDigits: 2,
+	});
+
+	function formatMoney(n: number | null): string {
+		return n === null || !Number.isFinite(n) ? '–' : fmtMoney.format(n);
+	}
+
+	function formatRatio(n: number | null): string {
+		return n === null || !Number.isFinite(n) ? '–' : fmtRatio.format(n);
+	}
+
+	// ── DOM 바인딩 ──────────────────────────────────────────────────
+	const $ = (id: string): HTMLInputElement =>
+		document.getElementById(id) as HTMLInputElement;
+
+	const elAdSpend = $('adSpend');
+	const elRevenue = $('attributedRevenue');
+	const elMargin = $('grossMargin');
+	const elConversions = $('conversions');
+	const elNewCustomers = $('newCustomers');
+
+	const elRoas = document.getElementById('roasValue') as HTMLElement;
+	const elProfit = document.getElementById('profitValue') as HTMLElement;
+	const elCpa = document.getElementById('cpaValue') as HTMLElement;
+	const elCac = document.getElementById('cacValue') as HTMLElement;
+	const elBreakeven = document.getElementById('breakevenValue') as HTMLElement;
+	const elVerdict = document.getElementById('verdict') as HTMLElement;
+
+	function update(): void {
+		const adSpend = parseNumber(elAdSpend.value);
+		const revenue = parseNumber(elRevenue.value);
+		const marginPct = parseNumber(elMargin.value);
+		const conversions = parseNumber(elConversions.value);
+		const newCustomers = parseNumber(elNewCustomers.value);
+
+		const roas = computeRoas(adSpend, revenue);
+		const profit = computeProfit(adSpend, revenue, marginPct);
+		const cpa = computeCpa(adSpend, conversions);
+		const cac = computeCac(adSpend, newCustomers);
+		const breakeven = computeBreakeven(marginPct);
+
+		elRoas.textContent = roas === null ? '–' : `${formatRatio(roas)}배`;
+		elProfit.textContent = formatMoney(profit);
+		elCpa.textContent = formatMoney(cpa);
+		elCac.textContent = formatMoney(cac);
+		elBreakeven.textContent = breakeven === null ? '–' : `${formatRatio(breakeven)}배`;
+
+		// 판정 문구
+		let verdict = '광고비를 입력하면 ROAS·순이익·CPA·CAC·손익분기 ROAS가 계산됩니다.';
+		let verdictClass = '';
+		if (roas !== null) {
+			verdict = `ROAS ${formatRatio(roas)}배 — `;
+			if (breakeven !== null) {
+				verdict +=
+					roas >= breakeven
+						? `손익분기(${formatRatio(breakeven)}배) 이상이므로 광고는 수익을 내고 있습니다.`
+						: `손익분기(${formatRatio(breakeven)}배) 미만이므로 광고 손실 구간입니다.`;
+				verdictClass = roas >= breakeven ? 'positive' : 'negative';
+			} else {
+				verdict += '마진율을 입력하면 손익 여부를 판단할 수 있습니다.';
+				verdictClass = 'info';
+			}
+		}
+
+		elVerdict.textContent = verdict;
+		elVerdict.className = verdictClass ? `verdict ${verdictClass}` : 'verdict';
+	}
+
+	[elAdSpend, elRevenue, elMargin, elConversions, elNewCustomers].forEach((el) => {
+		el.addEventListener('input', update);
+	});
+
+	update();
+</script>

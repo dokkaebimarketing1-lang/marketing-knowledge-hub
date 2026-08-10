@@ -1,0 +1,192 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { getCollection } from 'astro:content';
+import { isVisibleDoc, isVisibleTerm } from '../lib/content-visibility';
+
+const docs = await getCollection('docs');
+const glossary = await getCollection('glossary');
+const taxonomy = await getCollection('taxonomy');
+
+const categories = taxonomy
+	.filter((entry) => entry.data.kind === 'knowledge' && entry.data.status === 'active')
+	.sort((a, b) => a.data.order - b.data.order);
+const categoryById = new Map(categories.map((entry) => [entry.data.id, entry]));
+
+type DocEntry = (typeof docs)[number];
+
+function isCategoryHub(doc: DocEntry): boolean {
+	return doc.data.contentKind === 'categoryHub' || /(^|\/)index$/.test(doc.id);
+}
+
+function docCategoryId(doc: DocEntry): string | undefined {
+	return doc.data.categoryId ?? undefined;
+}
+
+function docCategoryLabel(doc: DocEntry): string | undefined {
+	const categoryId = doc.data.categoryId;
+	return categoryId ? categoryById.get(categoryId)?.data.label : undefined;
+}
+
+const articles = docs.filter((doc) => isVisibleDoc(doc.data) && !isCategoryHub(doc));
+const activeGlossary = glossary.filter((entry) => isVisibleTerm(entry.data));
+
+// 카테고리별 공개 문서 수 집계 (카테고리 허브/index 페이지 제외)
+function countDocs(categoryId: string): number {
+	return articles.filter((doc) => docCategoryId(doc) === categoryId).length;
+}
+
+// 문서 id → 실제 라우트 경로 ('ai-search/index' → '/ai-search/')
+function docPath(id: string): string {
+	const slug = id.replace(/\/?index$/, '');
+	return slug ? `/${slug}/` : '/';
+}
+
+// 최근 문서: updatedAt 내림차순 (미지정 시 id 기준), 상위 6건
+const recentDocs = [...articles]
+	.sort((a, b) => {
+		const ta = a.data.updatedAt ? a.data.updatedAt.getTime() : 0;
+		const tb = b.data.updatedAt ? b.data.updatedAt.getTime() : 0;
+		return tb - ta || a.id.localeCompare(b.id, 'ko');
+	})
+	.slice(0, 6);
+
+const dateFmt = new Intl.DateTimeFormat('ko-KR', {
+	year: 'numeric',
+	month: 'short',
+	day: 'numeric',
+});
+---
+
+<StarlightPage
+	frontmatter={{
+		title: '마케팅 지식허브',
+		description:
+			'검색·SNS·퍼포먼스·콘텐츠 마케팅 지식을 한곳에 — 마케터를 위한 종합 지식허브',
+		template: 'splash',
+		// ── 게시 지식 계약(strict): 탐색용 custom page는 utility 계약을 따른다 ──
+		contentKind: 'utility',
+		categoryId: null,
+		queryClusterId: null,
+		primaryQuery: '마케팅 지식허브',
+		searchIntent: 'navigational',
+		primaryQuestion: '마케팅 지식허브는 무엇인가?',
+		shortAnswer:
+			'검색·SNS·퍼포먼스·콘텐츠 마케팅과 데이터 분석 지식을 카테고리별로 제공하는 지식허브.',
+		primaryEntityId: null,
+		authorId: null,
+		publishedAt: null,
+		updatedAt: '2026-08-08',
+		reviewedAt: null,
+		reviewStatus: 'human-review-needed',
+		sourceIds: [],
+		relatedIds: [],
+		status: 'active',
+		redirectFrom: [],
+		hero: {
+			tagline:
+				'검색·SNS·퍼포먼스·콘텐츠 마케팅과 데이터 분석까지, 마케터에게 필요한 지식을 체계적으로 모았습니다.',
+			actions: [
+				{ text: '지식 둘러보기', link: '#categories', variant: 'primary' },
+				{ text: '미니 툴 사용하기', link: '#tools', variant: 'secondary' },
+			],
+		},
+	}}
+>
+	<div class="mk-stats" aria-label="허브 현황">
+		<span><strong>{articles.length}</strong> 지식 문서</span>
+		<span><strong>{categories.length}</strong> 카테고리</span>
+		<span><strong>{activeGlossary.length}</strong> 용어사전</span>
+		<span><strong>2</strong> 미니 툴</span>
+	</div>
+
+	<section class="mk-section" id="categories">
+		<div class="mk-section-head">
+			<h2 class="mk-section-title">지식 카테고리</h2>
+			<p class="mk-section-sub">{categories.length}개 분야의 마케팅 지식을 카테고리별로 탐색하세요.</p>
+		</div>
+		<ul class="mk-card-grid">
+			{
+				categories.map((category, i) => (
+					<li>
+						<a
+							class="mk-card"
+							style={category.data.hue === undefined ? undefined : `--mk-card-h: ${category.data.hue}`}
+							href={category.data.hubPath}
+						>
+							<span class="mk-card-kicker">{String(i + 1).padStart(2, '0')}</span>
+							<span class="mk-card-title">{category.data.label}</span>
+							<span class="mk-card-desc">{category.data.description}</span>
+							<span class="mk-card-foot">
+								<span class="count">문서 {countDocs(category.data.id)}개</span>
+								<span class="mk-card-arrow" aria-hidden="true">→</span>
+							</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section class="mk-tools" id="tools">
+		<h2>유틸리티 · 미니 툴</h2>
+		<p>업무에 바로 쓰는 계산기·생성기 도구와 마케팅 용어사전을 제공합니다.</p>
+		<ul class="mk-tool-list">
+			<li>
+				<a href="/glossary/">
+					<span>용어사전</span>
+					<span class="tag">용어 {activeGlossary.length}개</span>
+				</a>
+			</li>
+			<li>
+				<a href="/tools/roas-calculator/">
+					<span>광고 성과 계산기 (ROAS·CPA·CAC)</span>
+					<span class="tag">계산기</span>
+				</a>
+			</li>
+			<li>
+				<a href="/tools/keyword-combiner/">
+					<span>키워드 조합기</span>
+					<span class="tag">생성기</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+
+	<section class="mk-section">
+		<div class="mk-section-head">
+			<h2 class="mk-section-title">최근 문서</h2>
+			<p class="mk-section-sub">가장 최근에 업데이트된 지식 문서입니다.</p>
+		</div>
+		<ul class="mk-recent">
+			{
+				recentDocs.map((doc) => {
+					const updatedAt = doc.data.updatedAt;
+					const date = updatedAt ? dateFmt.format(updatedAt) : undefined;
+					const categoryLabel = docCategoryLabel(doc);
+					return (
+						<li>
+							<a href={docPath(doc.id)}>
+								<span class="body">
+									<span class="title">{doc.data.title}</span>
+									<span class="desc">
+										{doc.data.shortAnswer ?? doc.data.description}
+									</span>
+								</span>
+								<span class="meta">
+									{categoryLabel ? (
+										<span class="cat">{categoryLabel}</span>
+									) : null}
+									{date && updatedAt ? (
+										<time datetime={updatedAt.toISOString()}>
+											{date}
+										</time>
+									) : null}
+								</span>
+							</a>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</section>
+</StarlightPage>
