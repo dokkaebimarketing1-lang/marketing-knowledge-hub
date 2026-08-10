@@ -1,0 +1,113 @@
+---
+title: GA4 기초 (이벤트 모델·핵심 지표·설정)
+description: GA4의 이벤트 기반 데이터 모델, 주요 보고서 구조, 핵심 지표와 태그·전환 설정
+tags: [GA4, 이벤트추적, 전환]
+audience: beginner
+updatedAt: "2026-08-07"
+contentKind: article
+categoryId: analytics
+queryClusterId: ga4-foundations
+primaryQuery: GA4 기초
+searchIntent: informational
+primaryQuestion: GA4 기초(이벤트 모델·지표·설정)는 무엇인가?
+shortAnswer: 이벤트 기반 데이터 모델과 주요 지표·보고서 구조를 이해하고, gtag.js 또는 GTM 태그 설치, 이벤트 추적, 주요
+  이벤트(전환) 설정까지 완료하는 GA4 입문이다.
+primaryEntityId: ga4
+authorId: null
+publishedAt: null
+reviewedAt: null
+reviewStatus: human-review-needed
+sourceIds:
+  [
+    ga4-events-devguide,
+    ga4-session-doc,
+    ga4-key-events-doc,
+    ga4-engagement-rate-doc
+  ]
+relatedIds: [analytics/index, analytics/data-analysis, performance/roas-metrics]
+status: active
+redirectFrom: []
+---
+
+# GA4 기초 (이벤트 모델·핵심 지표·설정)
+
+GA4(Google Analytics 4)는 2023년 7월 1일부터 Universal Analytics(UA) 표준 속성의 데이터 처리가 중단되면서 사실상 유일한 구글 애널리틱스 솔루션입니다. UA의 세션 기반 모델과 달리 GA4는 **이벤트 기반(event-based) 데이터 모델**을 사용합니다.
+
+## 이벤트 기반 데이터 모델
+
+GA4는 사용자의 모든 상호작용(페이지 조회, 클릭, 스크롤, 구매 등)을 개별 **이벤트(Event)** 로 기록합니다. UA의 히트 유형(페이지뷰, 소셜, 거래 등)이 GA4에서는 모두 이벤트로 통합됐습니다.
+
+| 이벤트 유형 | 설정 필요 여부 | 예시 |
+|---|---|---|
+| 자동 수집 이벤트 | 불필요 | `first_visit`, `session_start`, `user_engagement` |
+| 향상된 측정 이벤트 | 불필요(보통) | `scroll`, `click`, `file_download`, `video_start` |
+| 권장 이벤트 | 필요 | `purchase`, `login`, `sign_up`, `add_to_cart` |
+| 맞춤 이벤트 | 필요 | 직접 정의한 이벤트 |
+
+- 이벤트에는 **이벤트 매개변수(Event parameters)** 를 붙일 수 있으며, 맞춤 매개변수를 보고서에 쓰려면 **맞춤 측정기준/측정항목**으로 등록해야 합니다 (등록 후 최대 48시간 소요).
+- 웹사이트 방문자 구분은 퍼스트파티 쿠키 `_ga`의 클라이언트 ID로 합니다.
+
+## 주요 보고서 구조
+
+1. **보고서 스냅숏**: 속성의 주요 지표 요약
+2. **실시간(Realtime)**: 최근 30분 이내 실시간 활동
+3. **수명 주기(Life cycle) 컬렉션**:
+   - 획득(Acquisition): 사용자 획득, 트래픽 획득
+   - 참여(Engagement): 이벤트, 페이지 및 화면, 방문 페이지
+   - 수익 창출(Monetization): 전자상거래 구매, 구매 여정, 결제 여정
+   - 유지(Retention): 사용자 유지
+4. **사용자(User) 컬렉션**: 인구통계, 기술
+
+## 핵심 지표
+
+| 지표 | 정의 |
+|---|---|
+| **세션** | 30분간 비활동 시 종료되는 상호작용 기간. `session_start`와 함께 `ga_session_id` 생성 |
+| **참여 세션** | 10초 이상 지속 / 주요 이벤트 발생 / 페이지 2회 이상 중 하나 이상 충족 |
+| **참여율 / 이탈률** | 참여 세션 ÷ 전체 세션 / 100% − 참여율 |
+| **총 사용자** | 이벤트를 1회 이상 발생시킨 고유 사용자 수 |
+| **활성 사용자** | 참여 세션 등 활성 조건을 충족한 고유 사용자 수 |
+| **전환(주요 이벤트)** | 중요 이벤트를 '주요 이벤트'로 표시하면 전환으로 집계. 흐름: 이벤트 → 주요 이벤트 → (Google Ads) 전환 |
+
+주의: GA4 기본 보고서에는 참여율/이탈률이 포함되지 않아 맞춤설정에서 추가해야 합니다. 모델링된 주요 이벤트가 있으며 전환 데이터는 기록 후 최대 12일간 업데이트될 수 있습니다.
+
+## GA4 설정
+
+### 태그 설치 (2가지 방식 중 하나만)
+
+1. **소스 코드 직접 삽입 (gtag.js)**: 데이터 스트림의 Google 태그 스니펫을 `<head>` 공통 영역에 삽입
+2. **구글 태그 관리자(GTM) 활용 (권장)**: 'Google 애널리틱스: GA4 구성' 태그에 측정 ID(`G-XXXXXXXXXX`) 입력, All Pages 트리거로 게시
+
+> GTM과 gtag.js를 동시에 쓰면 데이터가 중복 수집될 수 있습니다. 한 가지 방식만 사용하세요.
+
+### 이벤트 추적
+
+- **향상된 측정**: 페이지 조회, 스크롤, 아웃바운드 클릭, 사이트 검색, 동영상 참여, 파일 다운로드 자동 추적
+- **권장 이벤트**: `purchase` 등 표준 매개변수(`value`, `currency`, `items`) 포함 전송 → 전자상거래 보고 활성화
+- **검증**: DebugView, 실시간 보고서에서 이벤트 수신 여부 확인
+
+### 전환(주요 이벤트) 설정
+
+1. 관리자 → 이벤트에서 전환으로 쓸 이벤트 확인
+2. 해당 이벤트의 **'주요 이벤트로 표시'** 토글 켜기
+3. Google Ads 연동 시 GA4 주요 이벤트 기반으로 전환 생성 (데이터 불일치 위험 감소)
+4. 관리자 → 기여 분석에서 전환 기여 채널 선택
+
+### 추천 초기 설정
+
+- **데이터 보존 기간**: 기본 2개월 → 14개월로 변경
+- **Google 신호**: 인구통계, 교차 기기, 리마케팅 잠재고객 활용
+- **동의 모드(Consent Mode)**: CMP 연동으로 분석·광고 동의 관리
+
+## 실무 체크리스트
+
+- [ ] GA4 속성 + 데이터 스트림 생성, 측정 ID 확인
+- [ ] 태그 설치 (gtag.js 또는 GTM 중 하나만)
+- [ ] 향상된 측정 활성화 (스크롤·아웃바운드 클릭·사이트 검색 등)
+- [ ] 권장 이벤트(`purchase`, `add_to_cart`, `sign_up`) 구현
+- [ ] 구매 페이지 등에 전자상거래 매개변수(`value`, `currency`, `items`) 전송
+- [ ] 주요 이벤트(전환)로 표시 — 가입/구매/문의 등
+- [ ] DebugView·실시간 보고서로 이벤트 수신 검증
+- [ ] 데이터 보존 기간 14개월로 변경
+- [ ] Google 신호, 동의 모드 설정
+- [ ] Google Ads 연동 시 GA4 주요 이벤트 기반 전환 연결

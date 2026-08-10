@@ -1,0 +1,111 @@
+---
+title: ROAS·핵심 성과 지표 (퍼포먼스 마케팅)
+description: CTR·CPC·CPA·ROAS·CAC·LTV·MER의 정의와 계산식, 해석 기준과 운영 루틴
+tags: [ROAS, CAC, LTV, 퍼포먼스]
+audience: beginner
+updatedAt: "2026-08-07"
+contentKind: article
+categoryId: performance
+queryClusterId: performance-metrics
+primaryQuery: ROAS 계산법
+searchIntent: informational
+primaryQuestion: ROAS와 핵심 성과 지표는 어떻게 계산하나?
+shortAnswer: CTR·CPC·CPA·ROAS·CAC·LTV·MER 지표를 진단·의사결정 체인으로 읽고, 마진 기준 최소
+  ROAS(1÷마진율)와 LTV:CAC 비율로 예산을 판단하는 방법이다.
+primaryEntityId: roas
+authorId: null
+publishedAt: null
+reviewedAt: null
+reviewStatus: human-review-needed
+sourceIds: [google-ads-optimization-guide, meta-instagram-stories-ads]
+relatedIds: [performance/index, performance/retention, analytics/ga4-basic]
+status: active
+redirectFrom: []
+---
+
+# ROAS·핵심 성과 지표 (퍼포먼스 마케팅)
+
+**퍼포먼스 마케팅(Performance Marketing)** 은 광고 지출에 대해 **측정 가능한 결과(클릭, 리드, 설치, 구매, 매출)** 를 전제로 운영되는 마케팅입니다. KPI는 "경제적으로 캠페인이 작동하는가"를 평가하는 지표이며, **진단 지표**와 **의사결정 지표**를 구분하는 것이 중요합니다.
+
+- **진단 지표**: CTR, CPC, CPM → "캠페인 내부에서 무슨 일이 일어나고 있는가"
+- **의사결정 지표**: CPA, CAC, ROAS, 전환율, 공헌이익 → "예산을 스케일링해도 되는가"
+
+핵심 질문은 **"얻은 고객이 나중에 수익을 내는가?"** 즉 `CAC < LTV` 관계가 지속 가능성의 기준입니다.
+
+## 과금 모델
+
+| 모델 | 의미 | 활용 |
+|---|---|---|
+| CPM | 1,000회 노출당 비용 | 인지/도달, 브랜딩 |
+| CPC | 클릭당 비용 | 트래픽 확보, 검색광고 |
+| CPV | 조회당 비용 | 동영상 광고 |
+| CPL | 리드당 비용 | B2B, 리드젠 |
+| CPA | 획득·행동당 비용 | 성과형 캠페인 |
+| CPI | 설치당 비용 | 모바일 앱 UA |
+| CPS | 판매당 비용 | 제휴/어필리에이트 |
+
+> **CPA vs CAC 구분**: CPA는 "정의된 특정 행동" 1건당 비용(리드, 가입, 설치 등). CAC는 "실제 결제 고객 1명"을 데려오는 **총비용**(광고비 + 인건비 + 툴 + 대행 수수료 포함). CPA가 싸 보여도 실제 CAC는 훨씬 높을 수 있습니다.
+
+## 퍼널 산술
+
+```
+광고비(ad spend)   = CPM × 노출수 ÷ 1,000
+클릭수(clicks)     = 노출수 × CTR ÷ 100
+전환수(conversions)= 클릭수 × CVR ÷ 100
+매출(revenue)      = 전환수 × AOV(평균 주문가)
+```
+
+## 핵심 지표 공식
+
+| 지표 | 공식 | 해석 |
+|---|---|---|
+| CTR | 클릭수 ÷ 노출수 | "모든 클릭"인지 "링크 클릭"인지 정의 필요 |
+| CPC | 광고비 ÷ 클릭수 | 단독으론 가치 판단 불가 → CVR/CPA와 함께 |
+| CVR | 전환수 ÷ 세션(또는 클릭수) | 분모 정의 통일 필요 |
+| CPA | 귀속 비용 ÷ 획득(전환) 수 | 어떤 행동인지 명확히 해야 함 |
+| **ROAS** | 광고 귀속 매출 ÷ 광고비 | 보통 배수(4.0×)로 표기, **매출 기준이지 이익 기준이 아님** |
+| **MER** | 총 매출 ÷ 총 마케팅 비용 | 전 채널 블렌디드 효율. 플랫폼별 ROAS의 "정직한" 상위 확인 지표 |
+| **CAC** | 총 획득 비용 ÷ 신규 고객 수 | 인건비를 빼면 크게 과소평가됨 |
+| **LTV** | 평균 구매가 × 구매 빈도 × 고객 수명 | **마진(공헌이익) 기준**으로 비교해야 CAC와 정확히 대응 |
+| CAC Payback | CAC ÷ 월 고객 공헌이익 | 획득비 회수 기간(개월) |
+
+**ROAS 주의**: 마진율 25%면 ROAS 4.0이 겨우 본전입니다. 최소 ROAS = 1 ÷ 마진율. **iROAS(증분 ROAS)** 는 광고가 없어도 발생했을 매출을 제외한 진짜 효율입니다.
+
+## LTV:CAC 해석 기준
+
+| 비율 | 해석 | 행동 |
+|---|---|---|
+| 1:1 미만 | 획득비 > 고객가치, 구조적 손실 | 즉시 CAC 절감 또는 LTV 증대 |
+| 1:1 ~ 3:1 | 간신히 수익 | 신중한 최적화 |
+| **3:1** | SaaS/구독의 최소 건강 기준 | 성장 투자 가능 |
+| 5:1 이상 | 유닛 이코노믹스 양호 | 공격적 스케일링 |
+| 10:1+ | 마케팅 과소투자 가능성 | 획득 확대 검토 |
+
+## 비즈니스 모델별 우선 지표
+
+| 모델 | 핵심 지표 |
+|---|---|
+| 이커머스 | ROAS, CAC, LTV, 신규고객 비중, 재구매율, 공헌이익, 회수기간 |
+| 리드젠(B2B) | CPL, MQL 전환율, SQL 전환율, 기회당 비용 |
+| 구독/SaaS | CAC, 트라이얼→유료 전환율, 회수기간, MRR/ARR, 이탈률 |
+| 로컬 서비스 | 문의당 비용, 통화율, 예약율, 마감율 |
+
+## 운영 루틴
+
+| 주기 | 활동 |
+|---|---|
+| 일간 | 예산 소진율, CTR/CVR 급변, 학습 제한(Learning Limited) 여부, 지표 이상 탐지 |
+| 주간 | 소재 성과 리뷰, A/B 테스트 결과 분석, 예산 재배분, 신규 소재 투입 |
+| 월간 | 채널별 ROAS/CAC 리뷰, LTV:CAC 재계산, 퍼널 병목 진단, 다음 달 예산 확정 |
+
+## 실무 체크리스트
+
+- [ ] 목표를 "수치 + 기간"으로 정의 (예: Q3까지 월 150 MQL, CPL 200달러 이하)
+- [ ] 유닛 이코노믹스(AOV·마진율·재구매 빈도·이탈률)로 CAC 상한·최소 ROAS 선행 계산
+- [ ] 전환 추적 픽셀/SDK + 서버 사이드 이벤트 + UTM + GA4 이벤트 구축
+- [ ] 채널별 CAC(예산 배분용)와 블렌디드 CAC(전체 효율용) 구분 관리
+- [ ] ROAS는 마진 반영 최소 기준(1÷마진율)과 함께 해석
+- [ ] MER로 플랫폼 ROAS의 블렌디드 실체 확인
+- [ ] LTV:CAC 3:1 이상 유지, 1:1 미만 채널 즉시 진단
+- [ ] 자기잠식(캐니벌라이제이션)·소재 피로도(fatigue) 주기 점검
+- [ ] AI 자동 입찰 성과는 "먹이는 전환 데이터 품질"에 비례 — 중복·누락 이벤트 점검

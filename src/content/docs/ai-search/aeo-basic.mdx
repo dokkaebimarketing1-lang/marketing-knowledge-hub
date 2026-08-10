@@ -1,0 +1,109 @@
+---
+title: AEO 기초 (Answer Engine Optimization)
+description: 스니펫·음성 비서·AI Overviews에서 콘텐츠가 직접 답변으로 추출되도록 구조화하는 AEO 입문
+tags: [AEO, 스니펫, 음성검색]
+audience: beginner
+updatedAt: "2026-08-07"
+contentKind: article
+categoryId: ai-search
+queryClusterId: ai-search-optimization
+primaryQuery: AEO 최적화란
+searchIntent: informational
+primaryQuestion: AEO(답변 엔진 최적화)란 무엇인가?
+shortAnswer: 질문형 헤딩과 40~80단어의 결론 우선 답변 블록, FAQ·스키마 구조로 스니펫·음성 비서·AI 개요가 콘텐츠를 직접
+  답변으로 추출하도록 만드는 최적화다.
+primaryEntityId: aeo
+authorId: null
+publishedAt: null
+reviewedAt: null
+reviewStatus: human-review-needed
+sourceIds:
+  [
+    google-ai-features-doc,
+    google-ai-optimization-guide,
+    google-gen-ai-content-doc
+  ]
+relatedIds: [ai-search/geo-basic, search/seo-basic]
+status: active
+redirectFrom: []
+---
+
+# AEO 기초 (Answer Engine Optimization)
+
+**AEO(Answer Engine Optimization, 답변 엔진 최적화)** 는 피처드 스니펫, People Also Ask, 음성 비서, AI Overviews, AI 챗봇 같은 '답변 표면'에서 우리 콘텐츠가 **직접 답변으로 추출**되도록 콘텐츠를 구조화하는 작업입니다. 2018년경 스니펫·음성 검색 최적화 실무에서 출발해 AI 검색 시대로 확장됐습니다.
+
+## AEO vs GEO — 핵심 구분
+
+업계에서 용어가 혼재하지만, 기술적으로 가장 명확한 구분은 답변이 **'추출'되는가 vs '생성'되는가**입니다.
+
+| 구분 | AEO | GEO |
+|---|---|---|
+| 답변 방식 | 페이지 패시지를 **추출**(원문에 가깝게) | 여러 소스를 **합성**해 새 답변 생성, 브랜드명 인용 |
+| 대표 표면 | 스니펫, PAA, 음성 비서 | ChatGPT, Claude, Perplexity, AI Overviews |
+| 최적화 단위 | 질문-답변 쌍, 40~80단어 답변 블록 | 의미 클러스터, 엔티티 풍부 패시지 |
+| 콘텐츠 형식 | FAQ·HowTo·Speakable 스키마 | 시맨틱 트리플, 지식 그래프, 표·차트 |
+| 측정 | 스니펫 점유율, AI Overview 인용률 | 인용 빈도, SOV, 감성 |
+
+**모든 AEO 전술은 GEO 전술이지만, 모든 GEO 전술이 AEO 전술인 것은 아닙니다.** 실무에서 "답변 우선 콘텐츠 + 권위 인용문 + 출처 있는 통계"는 AEO와 GEO 양쪽에 가장 높은 효과를 줍니다.
+
+## AEO의 승리 조건
+
+**"질문을 헤딩에 넣고, 그 아래 2~4문장으로 직접 답하고, 엔진이 뽑아가게 한다."** 이것이 AEO의 전부입니다.
+
+- **질문형 헤딩(H2/H3)**: "OO는 얼마인가요?" 형태의 소제목
+- **결론 우선 문단**: 답변을 문단 앞쪽에 배치, 3~5문장 이내
+- **FAQ 섹션 3~5개**: 자주 묻는 질문을 별도 섹션으로 구조화
+- **40~80단어 답변 블록**: 떼어내도 의미가 통하는 자가완결형 패시지
+- **표·리스트 활용**: AI 파싱이 용이한 구조
+
+## 구조화 데이터
+
+| 스키마 | 용도 |
+|---|---|
+| `FAQPage` | 질문-답변 쌍 명시 (구글 FAQ 리치 결과는 2026년 5월 중단됐지만, **AI 답변 추출 신호로는 여전히 유효**) |
+| `HowTo` | 단계형 가이드 콘텐츠 |
+| `Speakable` | 음성 비서용 발췌 구간 지정 |
+| `Person` | 저자·전문가 약력, E-E-A-T 강화 |
+
+주의: 숨은 콘텐츠 마킹, 페이지 목적에 맞지 않는 과다 마킹, 필수 속성 누락, 내용 변경 시 `dateModified` 미갱신은 금물입니다.
+
+## AEO 실전 구조 예시
+
+```markdown
+## 네이버 AI 브리핑 인용 조건은 무엇인가요?
+네이버 AI 브리핑은 직접 경험·문제 해결 과정·상세 후기 같은
+'경험 콘텐츠'를 우대합니다. (출처: 네이버 공식 FAQ, 2026-05-26)
+```
+
+- 키워드 나열·짜깁기·AI 기계 생성물·과도한 광고성 콘텐츠는 인용 제외 가능성이 있습니다.
+- 이미지의 핵심 정보는 텍스트로도 작성해야 합니다.
+- 국내에서는 **네이버 AI 브리핑 인용의 최대 70%가 네이버 UGC**(블로그·카페·지식iN)이므로, UGC 채널 운영이 AEO 성과에 직결됩니다.
+
+## AEO 우선 전략이 유효한 경우
+
+- 사실형·즉답형 쿼리가 많은 업종 (가격, 방법, 정의, 후기)
+- 로컬 서비스 (영업시간, 위치, 서비스 범위)
+- 정보형 검색: "OO하는 방법", "OO 가격", "OO 후기"
+- AI 답변에서 직접 추출되어 **제로클릭 노출**을 노리는 경우
+
+## 실무 체크리스트
+
+**구조 점검**
+- [ ] H1은 1개, H2/H3는 질문형으로 계층 구성
+- [ ] 모든 핵심 문단이 결론 우선(두괄식) 구조인지 확인
+- [ ] FAQ 섹션 3~5개 배치
+- [ ] 핵심 수치·날짜·출처를 문단 앞쪽에 배치
+
+**스키마 점검**
+- [ ] FAQPage/HowTo 등 답변 관련 스키마 적용
+- [ ] 스키마 검증 도구(validator.schema.org)로 오류 확인
+- [ ] content 변경 시 dateModified 갱신
+
+**AI 대응 점검**
+- [ ] 도입부에 한 문장 결론 작성
+- [ ] 직접 경험·수치·공신 출처 명시
+- [ ] AI 초안은 개인 경험·사진으로 재가공 (무분별 AI 글 금지)
+- [ ] 동의어·관련 키워드 혼합으로 D.I.A. 맥락 분석 대응
+- [ ] 주 1회 스니펫 점유율·AI 인용률 측정
+
+> 팁: 콘텐츠 갱신 주기(2개월 이내)와 인용 감쇠 모니터링을 함께 운영하면 AEO 효과를 장기 유지할 수 있습니다.
